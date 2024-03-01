@@ -114,6 +114,8 @@ private:
     //938借鉴，二叉树的中序遍历
     void inorderTraversal(TreeNode* root);
 
+    int dfs_70(int n);//70用
+
 private:
 
     const std::vector<int> dx = { 0, 0, 1, -1 };
@@ -124,7 +126,9 @@ private:
 
     std::vector<int> closestNodesUse;//2476用
 
-    int sum_938;
+    int sum_938;//938用
+
+    std::vector<int> memo;//70用，记忆功能
 
 public:
     std::vector<int> nextGreaterElement(std::vector<int>& nums1, std::vector<int>& nums2);//496
@@ -233,4 +237,8 @@ public:
     Node* connect(Node* root);//117. 填充每个节点的下一个右侧节点指针 II
 
     int minIncrements(int n, std::vector<int>& cost);//2673. 使二叉树所有路径值相等的最小代价
+
+    bool validPartition(std::vector<int>& nums); //2369. 检查数组是否存在有效划分--动态规划
+
+    int climbStairs(int n);//70. 爬楼梯 经典动态规划，且基本动态规划会超时，+ 记忆
 };

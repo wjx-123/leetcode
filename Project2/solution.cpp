@@ -464,6 +464,18 @@ void solution1::inorderTraversal(TreeNode* root)
     inorderTraversal(root->right);
 }
 
+int solution1::dfs_70(int n)
+{
+    if (n <= 1) {
+        return 1;
+    }
+    int& res = memo[n];
+    if (res) {
+        return res;
+    }
+    return res = dfs_70(n - 1) + dfs_70(n - 2);
+}
+
 
 std::vector<int> solution1::avoidFlood(std::vector<int>& rains)
 {
@@ -1863,6 +1875,30 @@ int solution1::minIncrements(int n, std::vector<int>& cost)
         cost[i - 1] += std::max(cost[i * 2 - 1], cost[i * 2]); // ÀÛ¼ÓÂ·¾¶ºÍ
     }
     return ans;
+}
+
+bool solution1::validPartition(std::vector<int>& nums)
+{
+    int n = nums.size();
+    std::vector<int> f(n + 1);
+    f[0] = true;
+    for (int i = 1; i < n; i++)
+    {
+        if (f[i - 1] && nums[i] == nums[i - 1] ||
+            i > 1 && f[i - 2] && (nums[i] == nums[i - 1] == nums[i - 2] ||
+                nums[i] == nums[i - 1] + 1 && nums[i] == nums[i - 2] + 2)) 
+        {
+            f[i + 1] = true;
+        }
+    }
+    return f[n];
+}
+
+int solution1::climbStairs(int n)
+{
+    memo.resize(n + 1);
+    return dfs_70(n);
+    return 0;
 }
 
 
