@@ -241,4 +241,6 @@ public:
     bool validPartition(std::vector<int>& nums); //2369. 检查数组是否存在有效划分--动态规划
 
     int climbStairs(int n);//70. 爬楼梯 经典动态规划，且基本动态规划会超时，+ 记忆
+
+    int reachableNodes(int n, std::vector<std::vector<int>>& edges, std::vector<int>& restricted);//2368. 受限条件下可到达节点的数目
 };

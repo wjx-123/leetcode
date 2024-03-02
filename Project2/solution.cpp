@@ -1901,5 +1901,11 @@ int solution1::climbStairs(int n)
     return 0;
 }
 
+int solution1::reachableNodes(int n, std::vector<std::vector<int>>& edges, std::vector<int>& restricted)
+{
+    
+    return 0;
+}
+
 
 
