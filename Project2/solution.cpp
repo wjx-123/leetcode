@@ -1903,8 +1903,57 @@ int solution1::climbStairs(int n)
 
 int solution1::reachableNodes(int n, std::vector<std::vector<int>>& edges, std::vector<int>& restricted)
 {
+    std::set<int> restrict;
+    std::vector<std::vector<int>> my_edge;
+    for (auto temp : restricted) 
+    {
+        restrict.insert(temp);
+    }
+    for (int i = 0; i < edges.size(); i++)
+    {
+        if (!restrict.count(edges[i][0]) && !restrict.count(edges[i][1]))//如果没有受限节点，则保存
+        {
+            my_edge.push_back(edges[i]);
+        }
+    }
+    restrict.clear();
+
+    if (my_edge.size() == 0)
+    {
+        return 1;
+    }
+
+    for (auto& inner_vec : my_edge) {
+        std::sort(inner_vec.begin(), inner_vec.end());
+    }
+    // 然后，对外部向量进行排序，基于内部向量的第一个元素
+    std::sort(my_edge.begin(), my_edge.end(),
+        [](const std::vector<int>& a, const std::vector<int>& b) {
+            return a[0] < b[0];
+        }
+    );
+    if (my_edge[0][0] == 0)
+    {
+        restrict.insert(my_edge[0][0]);
+        restrict.insert(my_edge[0][1]);
+    }
+    for (int i = 1; i < my_edge.size(); i++)
+    {
+        if ((restrict.count(my_edge[i][0]) || restrict.count(my_edge[i][1])) && restrict.count(0))//加入存在其中的某个节点
+        {
+            restrict.insert(my_edge[i][0]);
+            restrict.insert(my_edge[i][1]);
+        }
+    }
+    if (restrict.count(0))
+    {
+        return restrict.size();
+    }
+    else 
+    {
+        return 1;
+    }
     
-    return 0;
 }
 
 

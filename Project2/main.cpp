@@ -229,13 +229,18 @@ int main(int argc, char* argv[]) {
     //std::cout << res << std::endl;
 
     //938
-    TreeNode* root = new TreeNode(10);
+    /*TreeNode* root = new TreeNode(10);
     root->left = new TreeNode(5);
     root->right = new TreeNode(15);
     root->left->left = new TreeNode(3);
     root->left->right = new TreeNode(7);
     root->right->right = new TreeNode(18);
-    so.rangeSumBST(root,7,15);
+    so.rangeSumBST(root,7,15);*/
+
+    //2368
+    std::vector<std::vector<int>> edges = { {0,1},{1,2},{3,1},{4,0},{0,5},{5,6} };
+    std::vector<int> res = {4,5};
+    so.reachableNodes(7,edges,res);
 
     return 0;
 }
