@@ -243,4 +243,6 @@ public:
     int climbStairs(int n);//70. 爬楼梯 经典动态规划，且基本动态规划会超时，+ 记忆
 
     int reachableNodes(int n, std::vector<std::vector<int>>& edges, std::vector<int>& restricted);//2368. 受限条件下可到达节点的数目--这个题这个解法不行
+
+    int findKOr(std::vector<int>& nums, int k);//2917. 找出数组中的 K-or 值
 };

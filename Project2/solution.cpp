@@ -1956,5 +1956,45 @@ int solution1::reachableNodes(int n, std::vector<std::vector<int>>& edges, std::
     
 }
 
+int solution1::findKOr(std::vector<int>& nums, int k)
+{
+    /*
+    * 自然数 | 自然数 == 自然数 + 自然数
+    */
+
+    int result = 1;
+    if (nums.size() == k )
+    {
+        result = nums[0];
+        for (int i = 0; i < nums.size() ; i++)
+        {
+            result = result & nums[i];
+        }
+        return result;
+    }
+    if (k == 1)
+    {
+        for (int i : nums)
+        {
+            result = result | i;
+        }
+    }
+    for (int i = 0; i < 31; i++)
+    {
+        int temp = 0;
+        for (int j : nums)
+        {
+            temp += j >> i & 1;//统计每一位是否为1
+        }
+        //统计出的个数若大于等于k 则按位与
+        if (temp >= k) 
+        {
+            result += 1 << i;
+        }
+    }
+
+    return result;
+}
+
 
 
