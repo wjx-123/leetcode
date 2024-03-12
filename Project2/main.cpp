@@ -243,7 +243,12 @@ int main(int argc, char* argv[]) {
     so.reachableNodes(7,edges,res);*/
 
     //2917
-    int temp = 5 >> 1 & 1;
-    std::cout << temp << std::endl;
+    //int temp = 5 >> 1 & 1;
+    //std::cout << temp << std::endl;
+
+    //4
+    std::vector<int> nums1 = {1,3};
+    std::vector<int> nums2 = {2};
+    std::cout << so.findMedianSortedArrays(nums1, nums2) << std::endl;
     return 0;
 }

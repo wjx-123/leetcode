@@ -248,4 +248,6 @@ public:
     int findKOr(std::vector<int>& nums, int k);//2917. 找出数组中的 K-or 值
 
     std::string capitalizeTitle(std::string title);//2129. 将标题首字母大写
+
+    double findMedianSortedArrays(std::vector<int>& nums1, std::vector<int>& nums2);//4. 寻找两个正序数组的中位数
 };

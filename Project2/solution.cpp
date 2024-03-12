@@ -2039,5 +2039,51 @@ std::string solution1::capitalizeTitle(std::string title)
     return ans;
 }
 
+double solution1::findMedianSortedArrays(std::vector<int>& nums1, std::vector<int>& nums2)
+{
+    int m = nums1.size();
+    int n = nums2.size();
+    nums1.emplace_back(INT_MAX);    // 追加哨兵位
+    nums2.emplace_back(INT_MAX);
+    int k = (m + n + 1) / 2;    // 获取中间数是第几个数（偶数取前一个数）
+    int idx1 = 0;     // 遍历指针，指向当前取得数组的元素
+    int idx2 = 0;
+    bool flag = false;  // 标记中间数取的是否为nums1的元素
+    while (true) {
+        // 数组1元素全部取完，剩下的元素由数组2提供
+        if (idx1 == m) {
+            // [idx2, ?]提供k个元素，即?-idx2+1=k => ? = idx2+k-1
+            idx2 += k - 1;
+            break;
+        }
+        // 数组2元素全部取完，剩下的元素由数组1提供
+        if (idx2 == n) {
+            idx1 += k - 1;
+            flag = true;
+            break;
+        }
+        // 为了使指针停在中间数的位置，最后一个数单独处理
+        if (k == 1) {
+            flag = nums1[idx1] < nums2[idx2];   // 指针无需移动，只需要判断取哪个数组的元素
+            break;
+        }
+        // 每次取一个当前更小的数，并移动对应指针取下一个数
+        if (nums1[idx1] < nums2[idx2]) {
+            idx1++;
+        }
+        else {
+            idx2++;
+        }
+        k--;
+    }
+    // 总元素个数为奇数，直接返回中间数，根据flag判断中间数是在nums1还是在nums2
+    if ((m + n) & 1)return (flag ? nums1[idx1] : nums2[idx2]) / 1.0;
+    // 总元素个数为偶数，不仅要取中间数，还要取中间数的后一位取平均
+    // 根据flag判断中间数是在nums1还是在nums2，中间数的下一个数要么是中间数同数组的后一位，要么是另一个数组的当前指向元素
+    if (flag)return (nums1[idx1] + std::min(nums1[idx1 + 1], nums2[idx2])) / 2.0;
+    return (nums2[idx2] + std::min(nums2[idx2 + 1], nums1[idx1])) / 2.0;
+
+}
+
 
 
