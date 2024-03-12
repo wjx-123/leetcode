@@ -1996,5 +1996,48 @@ int solution1::findKOr(std::vector<int>& nums, int k)
     return result;
 }
 
+std::string solution1::capitalizeTitle(std::string title)
+{
+    /*int i = 0;
+    std::string temp,result;
+    while (i < title.length())
+    {
+        if (title[i] == ' ')
+        {
+            if (temp.size() <= 2)
+            {
+                for (int j = 0; j < temp.size(); j++) 
+                {
+                    temp[j] = std::tolower(temp[j]);
+                }
+            }
+            else 
+            {
+                temp[0] = std::toupper(temp[0]);
+            }
+            result += temp;
+            temp.clear();
+        }
+        temp += title[i];
+        result += ' ';
+    }
+    return result;*///超出时间限制
+    std::istringstream iss(title);
+    std::string ans, s;
+    while (iss >> s) {
+        if (!ans.empty()) {
+            ans += ' ';
+        }
+        if (s.length() > 2) {
+            ans += toupper(s[0]); // 首字母大写
+            s = s.substr(1);
+        }
+        for (char c : s) {
+            ans += tolower(c);
+        }
+    }
+    return ans;
+}
+
 
 
