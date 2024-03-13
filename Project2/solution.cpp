@@ -2085,5 +2085,21 @@ double solution1::findMedianSortedArrays(std::vector<int>& nums1, std::vector<in
 
 }
 
+std::string solution1::maximumOddBinaryNumber(std::string s)
+{
+    int numOf1 = 0, sizeOfS = s.length();
+    for (int i = 0; i < sizeOfS; i++) {
+        numOf1 = s[i] == '1' ? numOf1 + 1 : numOf1;
+    }
+    std::string result;
+
+    while (result.length() < sizeOfS - 1)
+    {
+        result += numOf1 - 1 > 0 ? '1' : '0';
+        numOf1--;
+    }
+    return result + '1';
+}
+
 
 
