@@ -252,4 +252,6 @@ public:
     double findMedianSortedArrays(std::vector<int>& nums1, std::vector<int>& nums2);//4. 寻找两个正序数组的中位数
 
     std::string maximumOddBinaryNumber(std::string s); //2864. 最大二进制奇数
+
+    long long maxArrayValue(std::vector<int>& nums);//2789. 合并后数组中的最大元素
 };

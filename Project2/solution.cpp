@@ -2101,5 +2101,15 @@ std::string solution1::maximumOddBinaryNumber(std::string s)
     return result + '1';
 }
 
+long long solution1::maxArrayValue(std::vector<int>& nums)
+{
+    long long result = nums[nums.size() - 1];
+    for (int i = nums.size() - 2; i >= 0; i--)
+    {
+        result = nums[i] <= result ? result + nums[i] : nums[i];
+    }
+    return result;
+}
+
 
 
