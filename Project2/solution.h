@@ -254,4 +254,6 @@ public:
     std::string maximumOddBinaryNumber(std::string s); //2864. 最大二进制奇数
 
     long long maxArrayValue(std::vector<int>& nums);//2789. 合并后数组中的最大元素
+
+    long long sellingWood(int m, int n, std::vector<std::vector<int>>& prices);//2312. 卖木头块---动态规划，不是很懂
 };

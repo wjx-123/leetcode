@@ -2111,5 +2111,23 @@ long long solution1::maxArrayValue(std::vector<int>& nums)
     return result;
 }
 
+long long solution1::sellingWood(int m, int n, std::vector<std::vector<int>>& prices)
+{
+    std::vector<std::vector<int>> pr(m + 1, std::vector<int>(n + 1));
+    for (auto& p : prices) {
+        pr[p[0]][p[1]] = p[2];
+    }
+
+    std::vector<std::vector<long long>> f(m + 1, std::vector<long long>(n + 1));
+    for (int i = 1; i <= m; i++) {
+        for (int j = 1; j <= n; j++) {
+            f[i][j] = pr[i][j];
+            for (int k = 1; k < j; k++) f[i][j] = std::max(f[i][j], f[i][k] + f[i][j - k]); // ´¹Ö±ÇÐ¸î
+            for (int k = 1; k < i; k++) f[i][j] = std::max(f[i][j], f[k][j] + f[i - k][j]); // Ë®Æ½ÇÐ¸î
+        }
+    }
+    return f[m][n];
+}
+
 
 
