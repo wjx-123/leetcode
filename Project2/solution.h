@@ -256,4 +256,6 @@ public:
     long long maxArrayValue(std::vector<int>& nums);//2789. 合并后数组中的最大元素
 
     long long sellingWood(int m, int n, std::vector<std::vector<int>>& prices);//2312. 卖木头块---动态规划，不是很懂
+
+    int distinctIntegers(int n);//2549. 统计桌面上的不同数字
 };

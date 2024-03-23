@@ -2129,5 +2129,16 @@ long long solution1::sellingWood(int m, int n, std::vector<std::vector<int>>& pr
     return f[m][n];
 }
 
+int solution1::distinctIntegers(int n)
+{
+    //法一
+    //1 <= n <= 100
+    //取余为一，则只有二进制数只有第一位有值的满足， 2-10 4-100 8-1000
+    //可枚举
+    //法二
+
+    return std::max(n - 1, 1);
+}
+
 
 
