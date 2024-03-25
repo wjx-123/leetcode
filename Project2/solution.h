@@ -258,4 +258,7 @@ public:
     long long sellingWood(int m, int n, std::vector<std::vector<int>>& prices);//2312. 卖木头块---动态规划，不是很懂
 
     int distinctIntegers(int n);//2549. 统计桌面上的不同数字
+
+    int coinChange(std::vector<int>& coins, int amount);//322. 零钱兑换
+
 };
