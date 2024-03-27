@@ -262,4 +262,6 @@ public:
     int coinChange(std::vector<int>& coins, int amount);//322. 零钱兑换
 
     int countWays(std::vector<std::vector<int>>& ranges);//2580. 统计将重叠区间合并成组的方案数 区间合并+技术，这一段有问题，之后可以用双指针指向左右端点的方法
+
+    int rob(std::vector<int>& nums);//198. 打家劫舍
 };

@@ -2199,5 +2199,20 @@ int solution1::countWays(std::vector<std::vector<int>>& ranges)
     return std::pow(2,temp.size()) ;
 }
 
+int solution1::rob(std::vector<int>& nums)
+{
+    if (nums.size() == 0)
+    {
+        return 0;
+    }
+    std::vector<int> dp(nums.size() + 1, 0);
+    dp[1] = nums[0];
+    for (int i = 2; i <= nums.size(); i++)
+    {
+        dp[i] = std::max(dp[i-1], dp[i - 2] + nums[i - 1]);
+    }
+    return dp[nums.size()];
+}
+
 
 
