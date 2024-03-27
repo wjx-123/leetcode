@@ -247,8 +247,13 @@ int main(int argc, char* argv[]) {
     //std::cout << temp << std::endl;
 
     //4
-    std::vector<int> nums1 = {1,3};
-    std::vector<int> nums2 = {2};
-    std::cout << so.findMedianSortedArrays(nums1, nums2) << std::endl;
+    //std::vector<int> nums1 = {1,3};
+    //std::vector<int> nums2 = {2};
+    //std::cout << so.findMedianSortedArrays(nums1, nums2) << std::endl;
+    
+    //2580
+    std::vector<std::vector<int>> range = { {2,5},{4,8},{10,20},{1,3} };//{ {1, 3} , {10, 20}, {2, 5}, {4, 8} }
+    auto a = so.countWays(range);
+    std::cout << "num:" << a << std::endl;
     return 0;
 }

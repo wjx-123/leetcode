@@ -2155,5 +2155,49 @@ int solution1::coinChange(std::vector<int>& coins, int amount)
     return dp[amount] > amount ? -1 : dp[amount];
 }
 
+int solution1::countWays(std::vector<std::vector<int>>& ranges)
+{
+    std::vector<std::vector<int>> temp;
+    std::sort(ranges.begin(),ranges.end());
+    if (ranges.size() < 2)
+    {
+        return 2;
+    }
+    int i = 0, j = 1,shao = -1;
+    for (i,j; i < ranges.size() - 1 && j < ranges.size() ; )
+    {
+        shao = shao < 0 ? i : shao;
+        if (ranges[shao][1] >= ranges[j][0]) 
+        {
+            if (j < ranges.size() - 1) 
+            {
+                shao = j;
+                j++;
+                
+                continue;
+            }
+            else 
+            {
+                temp.push_back({ ranges[i][0],std::max(ranges[i][1],ranges[j][1]) });
+                break;
+            }
+        }
+        else if (ranges[i][1] < ranges[j][0]) 
+        {
+            temp.push_back(ranges[i]);
+            i = j; j++;
+            continue;
+        }
+        temp.push_back({ranges[i][0],std::max(ranges[i][1],ranges[j][1])});
+        i = j + 1;
+        j = i + 1;
+    }
+    if (j == ranges.size())
+    {
+        temp.push_back(ranges[ranges.size() - 1]);
+    }
+    return std::pow(2,temp.size()) ;
+}
+
 
 
