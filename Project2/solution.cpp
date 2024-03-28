@@ -2214,5 +2214,10 @@ int solution1::rob(std::vector<int>& nums)
     return dp[nums.size()];
 }
 
+int solution1::firstDayBeenInAllRooms(std::vector<int>& nextVisit)
+{
+    return 0;
+}
+
 
 
