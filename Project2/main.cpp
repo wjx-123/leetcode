@@ -257,7 +257,15 @@ int main(int argc, char* argv[]) {
     //std::cout << "num:" << a << std::endl;
 
     //198
-    std::vector<int> nums = {1,2,3,1};
-    so.rob(nums);
+    //std::vector<int> nums = {1,2,3,1};
+    //so.rob(nums);
+    
+    //2810
+    //std::string s = "string";
+    //std::string a = so.finalString(s);
+    
+    //331
+    std::string s = "9,3,4,#,#,1,#,#,2,#,6,#,#";
+    bool res = so.isValidSerialization(s);
     return 0;
 }

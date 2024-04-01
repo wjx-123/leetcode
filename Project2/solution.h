@@ -117,6 +117,9 @@ private:
 
     int dfs_70(int n);//70用
 
+    //2810用 反转字符串
+    std::string flipString(std::string s);
+
 private:
 
     const std::vector<int> dx = { 0, 0, 1, -1 };
@@ -266,4 +269,8 @@ public:
     int rob(std::vector<int>& nums);//198. 打家劫舍
 
     int firstDayBeenInAllRooms(std::vector<int>& nextVisit);//1997. 访问完所有房间的第一天
+
+    std::string finalString(std::string s);//2810. 故障键盘
+
+    bool isValidSerialization(std::string preorder);//331. 验证二叉树的前序序列化  这个解法大多情况都可以，只有数组最后的#欠考虑
 };

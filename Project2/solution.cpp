@@ -476,6 +476,16 @@ int solution1::dfs_70(int n)
     return res = dfs_70(n - 1) + dfs_70(n - 2);
 }
 
+std::string solution1::flipString(std::string s)
+{
+    std::string res;
+    for (int i = s.size() - 1; i >= 0; i--) 
+    {
+        res += s[i];
+    }
+    return res;
+}
+
 
 std::vector<int> solution1::avoidFlood(std::vector<int>& rains)
 {
@@ -2217,6 +2227,74 @@ int solution1::rob(std::vector<int>& nums)
 int solution1::firstDayBeenInAllRooms(std::vector<int>& nextVisit)
 {
     return 0;
+}
+
+std::string solution1::finalString(std::string s)
+{
+    std::string res;
+    for (auto temp : s)
+    {
+        res = temp != 'i' ? res + temp : flipString(res);
+    }
+    return res;
+}
+
+bool solution1::isValidSerialization(std::string preorder)
+{
+    std::stack<std::string> stackOfTree;
+    for (auto temp : preorder)
+    {
+        if (temp == ',')
+        {
+            continue;
+        }
+        else if (temp == '#')
+        {
+            if (stackOfTree.empty()) 
+            {
+                return false;
+            }
+            stackOfTree.pop();
+        }
+        else 
+        {
+            stackOfTree.push(std::to_string(temp));
+        }
+    }
+    if (stackOfTree.size() == 1 && stackOfTree.top() == "#")
+    {
+        return true;
+    }
+    return false;
+    /*这一段是正确
+    * int n = preorder.length();
+        stack<int> stk;
+        stk.push(1);
+        for (int i = 0; i < n;) {
+            if (stk.empty()) {
+                return false;
+            }
+            if (preorder[i] == ',') {
+                i++;
+            } else if (preorder[i] == '#') {
+                stk.top() -= 1;
+                if (stk.top() == 0) {
+                    stk.pop();
+                }
+                i++;
+            } else {
+                while (i < n && preorder[i] != ',') {
+                    i++;
+                }
+                stk.top() -= 1;
+                if (stk.top() == 0) {
+                    stk.pop();
+                }
+                stk.push(2);
+            }
+        }
+        return stk.empty();
+    */
 }
 
 
