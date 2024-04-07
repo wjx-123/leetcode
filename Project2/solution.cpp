@@ -2297,5 +2297,31 @@ bool solution1::isValidSerialization(std::string preorder)
     */
 }
 
+std::string solution1::convert(std::string s, int numRows)
+{
+    if (numRows == 1) 
+    {
+        return s;
+    }
+    int flag = 0;
+    int direction = -1;
+    std::vector<std::string> temp(numRows);
+    for (int i = 0; i < s.length(); i++)
+    {
+        temp[flag].push_back(s[i]);
+        if (flag == 0 || flag == numRows - 1)
+        {
+            direction *= -1;
+        }
+        flag += direction;
+     }
+    std::string res;
+    for (auto r : temp)
+    {
+        res += r;
+    }
+    return res;
+}
+
 
 

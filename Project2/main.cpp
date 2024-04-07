@@ -265,7 +265,11 @@ int main(int argc, char* argv[]) {
     //std::string a = so.finalString(s);
     
     //331
-    std::string s = "9,3,4,#,#,1,#,#,2,#,6,#,#";
-    bool res = so.isValidSerialization(s);
+    /*std::string s = "9,3,4,#,#,1,#,#,2,#,6,#,#";
+    bool res = so.isValidSerialization(s);*/
+
+    //6
+    std::string res = so.convert("AB",1);
+    std::cout << res << std::endl;
     return 0;
 }

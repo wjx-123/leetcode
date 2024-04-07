@@ -273,4 +273,6 @@ public:
     std::string finalString(std::string s);//2810. 故障键盘
 
     bool isValidSerialization(std::string preorder);//331. 验证二叉树的前序序列化  这个解法大多情况都可以，只有数组最后的#欠考虑
+
+    std::string convert(std::string s, int numRows); //6. Z 字形变换
 };
