@@ -2323,5 +2323,38 @@ std::string solution1::convert(std::string s, int numRows)
     return res;
 }
 
+int solution1::minOperations(std::vector<int>& nums)
+{
+    int numOfSim = 0;
+    std::set<int> nums_map;
+    for (auto n : nums)
+    {
+        nums_map.insert(n);
+    }
+    if (nums_map.size() != nums.size())
+    {
+        numOfSim = nums.size() - nums_map.size();
+    }
+    int maxAndMin = *--nums_map.end() - *nums_map.begin();//最大最小数的差距
+    if (maxAndMin == nums_map.size() - 1 && numOfSim == 0)
+    {
+        return 0;
+    }
+    int temp = std::numeric_limits<int>::max();//记录每一个值作为左值的时候需要改变的值 --- 取最小
+    //std::set<int>::iterator iteratorTemp = nums_map.begin();
+    for (auto a : nums_map) 
+    {
+        int left = a;
+        int right = a + nums.size() - 1;
+        auto it = nums_map.upper_bound(right);//找到 第一个大于 right 的位置
+        auto it2 = nums_map.lower_bound(left);// 第一个小于 left的位置
+        int index = std::distance(it,nums_map.end()) >= 0 ? std::distance(it, nums_map.end()) : 0;
+        int index2 = std::distance(nums_map.begin(),it2);
+        int change = numOfSim + index + index2;
+        change < temp ? temp = change : change = 0;
+    }
+    return temp;
+}
+
 
 

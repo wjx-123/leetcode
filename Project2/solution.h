@@ -275,4 +275,6 @@ public:
     bool isValidSerialization(std::string preorder);//331. 验证二叉树的前序序列化  这个解法大多情况都可以，只有数组最后的#欠考虑
 
     std::string convert(std::string s, int numRows); //6. Z 字形变换
+
+    int minOperations(std::vector<int>& nums);//2009. 使数组连续的最少操作数 -- 可行，但在54个用例(nums长度是1000)时超出时间限制
 };

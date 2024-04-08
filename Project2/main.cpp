@@ -269,7 +269,11 @@ int main(int argc, char* argv[]) {
     bool res = so.isValidSerialization(s);*/
 
     //6
-    std::string res = so.convert("AB",1);
-    std::cout << res << std::endl;
+    //std::string res = so.convert("AB",1);
+    //std::cout << res << std::endl;
+
+    //2009
+    std::vector<int> nums = {8,5,9,9,8,4};
+    so.minOperations(nums);
     return 0;
 }
