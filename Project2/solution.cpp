@@ -2356,5 +2356,45 @@ int solution1::minOperations(std::vector<int>& nums)
     return temp;
 }
 
+int solution1::maximumCount(std::vector<int>& nums)
+{
+    //O(n)
+    int pos = 0, neg = 0;
+    for (int i = 0; i < nums.size(); i++) {
+        if (nums[i] == 0) {
+            continue;
+        }
+        nums[i] > 0 ? pos++ : neg++;
+    }
+    return pos > neg ? pos : neg;
+    
+    //O(n/2)
+    /*int i = 0, j = nums.size() - 1;
+    while (i < j) 
+    {
+        if (nums[i] == 0 && nums[j] == 0)
+        {
+            i++; j--;
+            continue;
+        }
+        if (nums[i] == 0 && nums[j] != 0) 
+        {
+            neg++;
+        }
+        if (nums[i] != 0 && nums[j] == 0) 
+        {
+            pos++;
+        }
+        else 
+        {
+            pos++;
+            neg++;
+        }
+        i++;
+        j--;
+    }
+    return pos > neg ? pos : neg;*/
+}
+
 
 
