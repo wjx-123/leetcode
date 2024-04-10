@@ -2396,5 +2396,27 @@ int solution1::maximumCount(std::vector<int>& nums)
     return pos > neg ? pos : neg;*/
 }
 
+std::string solution1::maximumBinaryString(std::string binary)
+{
+    if (binary.size() < 3)
+    {
+        if (binary == "00")
+        {
+            return "10";
+        }
+        else 
+        {
+            return binary;
+        }
+    }
+    int i = binary.find('0');
+    if (i < 0)
+    {
+        return binary;
+    }
+    int cnt1 = std::count(binary.begin() + i,binary.end(), '1');
+    return std::string(binary.size() - 1 - cnt1, '1') + '0' + std::string(cnt1,'1');
+}
+
 
 

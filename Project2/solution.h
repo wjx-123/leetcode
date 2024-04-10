@@ -279,4 +279,6 @@ public:
     int minOperations(std::vector<int>& nums);//2009. 使数组连续的最少操作数 -- 可行，但在54个用例(nums长度是1000)时超出时间限制
 
     int maximumCount(std::vector<int>& nums);//2529. 正整数和负整数的最大计数
+
+    std::string maximumBinaryString(std::string binary);//1702. 修改后的最大二进制字符串 这个解法天秀！
 };
