@@ -281,4 +281,6 @@ public:
     int maximumCount(std::vector<int>& nums);//2529. 正整数和负整数的最大计数
 
     std::string maximumBinaryString(std::string binary);//1702. 修改后的最大二进制字符串 这个解法天秀！
+
+    int findChampion(std::vector<std::vector<int>>& grid);//2923. 找到冠军 I
 };

@@ -2418,5 +2418,24 @@ std::string solution1::maximumBinaryString(std::string binary)
     return std::string(binary.size() - 1 - cnt1, '1') + '0' + std::string(cnt1,'1');
 }
 
+int solution1::findChampion(std::vector<std::vector<int>>& grid)
+{
+    int result = 0;
+    for (int i = 0, j = 1; i < grid.size() - 1 && j < grid.size() - 1; ) 
+    {
+        if (grid[i][j] == 1)
+        {
+            result = i;
+            j++;
+        }
+        else 
+        {
+            result = j;
+            i++;
+        }
+    }
+    return result;
+}
+
 
 
