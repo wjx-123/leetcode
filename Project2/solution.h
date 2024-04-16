@@ -283,4 +283,8 @@ public:
     std::string maximumBinaryString(std::string binary);//1702. 修改后的最大二进制字符串 这个解法天秀！
 
     int findChampion(std::vector<std::vector<int>>& grid);//2923. 找到冠军 I
+
+    int maxArea(std::vector<int>& height);//11. 盛最多水的容器
+
+    std::string intToRoman(int num);//12. 整数转罗马数字
 };

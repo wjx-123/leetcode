@@ -2437,5 +2437,33 @@ int solution1::findChampion(std::vector<std::vector<int>>& grid)
     return result;
 }
 
+int solution1::maxArea(std::vector<int>& height)
+{
+    int res = 0;
+    for(int i = 0, j = height.size() - 1; i < j; )
+    {
+        int nowArea = std::min(height[i], height[j]) * (j - i);
+        res = std::max(nowArea, res);
+        height[i] < height[j] ? i++ : j--;
+    }
+    return res;
+}
+
+std::string solution1::intToRoman(int num)
+{
+    std::map<int, std::string, std::greater<int>> Rom = { {1000, "M"},{500,  "D"},{100,  "C"},{50,   "L"},{10,   "X"},{4,    "IV"},{1,    "I"},
+        {900,  "CM"},{400,  "CD"},{90,   "XC"},{40,   "XL"},{9,    "IX"},{5,    "V"} };
+    std::string res;
+    for(auto it = Rom.begin(); it != Rom.end(); ++it)
+    {
+        while (num >= it->first) 
+        {
+            num -= it->first;
+            res += it->second;
+        }
+    }
+    return res;
+}
+
 
 

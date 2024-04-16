@@ -273,7 +273,11 @@ int main(int argc, char* argv[]) {
     //std::cout << res << std::endl;
 
     //2009
-    std::vector<int> nums = {8,5,9,9,8,4};
-    so.minOperations(nums);
+    //std::vector<int> nums = {8,5,9,9,8,4};
+    //so.minOperations(nums);
+
+    //11
+    std::vector<int> height = { 1,1 }; //1, 8, 6, 2, 5, 4, 8, 3, 7
+    std::cout << so.maxArea(height) << std::endl;
     return 0;
 }
