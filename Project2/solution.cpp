@@ -2465,5 +2465,109 @@ std::string solution1::intToRoman(int num)
     return res;
 }
 
+std::vector<std::vector<int>> solution1::threeSum(std::vector<int>& nums)
+{
+    /*这个是自己写的，冗余，且会有重复元素，内容是对的*/
+    //std::sort(nums.begin(),nums.end());
+    //std::vector<std::vector<int>> result;
+    //for (int i = 0; i < nums.size(); i++) 
+    //{
+    //    int numOfTwoNums = - nums[i];//转成两数之和
+    //    auto it = std::upper_bound(nums.begin(), nums.end(), -1);//找到大于-1的第一个位置
+    //    if (numOfTwoNums < 0) 
+    //    {
+    //        int m = 0, n = it - nums.begin();
+    //        while (m < n)
+    //        {
+    //            if (m == i || n == i)
+    //            {
+    //                m == i ? m++ : n--;
+    //                continue;
+    //            }
+    //            if (nums[m] + nums[n] == numOfTwoNums)
+    //            {
+    //                std::vector<int> temp = {nums[i], nums[m] , nums[n] };
+    //                result.push_back(temp);
+    //                m++, n--;
+    //            }
+    //            else
+    //            {
+    //                nums[m] + nums[n] < numOfTwoNums ? m++ : n--;
+    //            }
+    //        }
+    //    }
+    //    else if(numOfTwoNums > 0)
+    //    {
+    //        int m = it - nums.begin(), n = nums.size() - 1;
+    //        while (m < n)
+    //        {
+    //            if (m == i || n == i)
+    //            {
+    //                m == i ? m++ : n--;
+    //                continue;
+    //            }
+    //            if (nums[m] + nums[n] == numOfTwoNums)
+    //            {
+    //                std::vector<int> temp = { nums[i], nums[m] , nums[n] };
+    //                result.push_back(temp);
+    //                m++, n--;
+    //            }
+    //            else
+    //            {
+    //                nums[m] + nums[n] < numOfTwoNums ? m++ : n--;
+    //            }
+    //        }
+    //    }
+    //    else
+    //    {
+    //        int m = it - nums.begin() - 1;//小于0的第一个位置
+    //        int n = it - nums.begin() + 1;//大于0的第一个位置
+    //        while (m > 0 && n < nums.size() - 1) 
+    //        {
+    //            if (nums[m] + nums[n] == numOfTwoNums)
+    //            {
+    //                std::vector<int> temp = { nums[i], nums[m] , nums[n] };
+    //                result.push_back(temp);
+    //                m--, n++;
+    //            }
+    //            else 
+    //            {
+    //                nums[m] + nums[n] > numOfTwoNums ? m-- : n++;
+    //            }
+    //        }
+    //    }
+    //}
+    //return result;
+
+    /*gpt帮我改的，方法一样，但是去掉了冗余和重复元素*/
+    std::sort(nums.begin(), nums.end());
+    std::vector<std::vector<int>> result;
+    int size = nums.size();
+    for (int i = 0; i < size; i++) {
+        if (i > 0 && nums[i] == nums[i - 1]) {
+            continue;  // 跳过重复的元素
+        }
+        int target = -nums[i];
+        int m = i + 1, n = size - 1;
+        while (m < n) {
+            int sum = nums[m] + nums[n];
+            if (sum == target) {
+                result.push_back({ nums[i], nums[m], nums[n] });
+                // 移动指针并跳过所有重复的元素
+                while (m < n && nums[m] == nums[m + 1]) m++;
+                while (m < n && nums[n] == nums[n - 1]) n--;
+                m++, n--;
+            }
+            else if (sum < target) {
+                m++;
+            }
+            else {
+                n--;
+            }
+        }
+    }
+    return result;
+}
+
 
 

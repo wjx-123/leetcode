@@ -1,2 +1,64 @@
-﻿  main.cpp
+﻿  solution.cpp
+G:\leetcode\Project2\solution.cpp(99,30): warning C4244: “初始化”: 从“double”转换到“const int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(108,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(115,12): warning C4244: “return”: 从“__int64”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(167,22): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(288,14): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(289,14): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(325,12): warning C4552: ”!=“: 未使用表达式结果
+G:\leetcode\Project2\solution.cpp(374,16): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(482,16): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(590,35): warning C4244: “=”: 从“double”转换到“_Ty”，可能丢失数据
+          with
+          [
+              _Ty=int
+          ]
+G:\leetcode\Project2\solution.cpp(602,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(609,20): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(622,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(640,14): warning C4244: “初始化”: 从“__int64”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(675,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(731,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(824,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(824,28): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(848,24): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(869,24): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(887,24): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(909,33): warning C4554: “>>”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+G:\leetcode\Project2\solution.cpp(936,19): warning C4244: “初始化”: 从“__int64”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(937,17): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(1076,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(1113,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(1241,23): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(1356,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(1357,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(1414,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(1415,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(1455,14): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(1455,36): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(1489,18): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(1541,25): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(1607,15): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(1722,28): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(1727,30): warning C4244: “初始化”: 从“double”转换到“const int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(1743,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(1779,19): warning C4244: “初始化”: 从“__int64”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(1806,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(1817,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(1822,15): warning C4244: “初始化”: 从“__int64”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(1860,15): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(1892,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(1960,29): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(2054,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(2055,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(2100,29): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(2117,16): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(2209,20): warning C4244: “return”: 从“double”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(2336,32): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(2348,19): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(2351,19): warning C4244: “初始化”: 从“__int64”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(2352,20): warning C4244: “初始化”: 从“__int64”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(2412,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(2417,14): warning C4244: “初始化”: 从“__int64”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(2443,22): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
   Project2.vcxproj -> G:\leetcode\x64\Debug\leetcode.exe

@@ -277,7 +277,11 @@ int main(int argc, char* argv[]) {
     //so.minOperations(nums);
 
     //11
-    std::vector<int> height = { 1,1 }; //1, 8, 6, 2, 5, 4, 8, 3, 7
-    std::cout << so.maxArea(height) << std::endl;
+    //std::vector<int> height = { 1,1 }; //1, 8, 6, 2, 5, 4, 8, 3, 7
+    //std::cout << so.maxArea(height) << std::endl;
+    
+    //15
+    std::vector<int> nums = { -1,0,1,2,-1,-4 };
+    so.threeSum(nums);
     return 0;
 }
