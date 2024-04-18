@@ -2569,5 +2569,27 @@ std::vector<std::vector<int>> solution1::threeSum(std::vector<int>& nums)
     return result;
 }
 
+std::vector<int> solution1::findOriginalArray(std::vector<int>& changed)
+{
+    std::sort(changed.begin(),changed.end());
+    std::vector<int> res;
+    std::unordered_multiset<int> mark;
+    for (int x : changed)
+    {
+        auto it = mark.find(x);
+        if (it == mark.end()) 
+        {
+            mark.insert(x * 2);
+            res.push_back(x);
+        }
+        else 
+        {
+            mark.erase(it);
+        }
+        
+    }
+    return mark.empty() ? res : std::vector<int>();
+}
+
 
 

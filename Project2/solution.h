@@ -289,4 +289,6 @@ public:
     std::string intToRoman(int num);//12. 整数转罗马数字
 
     std::vector<std::vector<int>> threeSum(std::vector<int>& nums);//15. 三数之和
+
+    std::vector<int> findOriginalArray(std::vector<int>& changed);//2007. 从双倍数组中还原原数组
 };
