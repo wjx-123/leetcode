@@ -12,6 +12,7 @@
 #include <set>
 #include <map>
 #include <sstream>
+#include <climits>
 
 struct TreeNode {
     int val;
@@ -291,4 +292,8 @@ public:
     std::vector<std::vector<int>> threeSum(std::vector<int>& nums);//15. 三数之和
 
     std::vector<int> findOriginalArray(std::vector<int>& changed);//2007. 从双倍数组中还原原数组
+
+    int minSkips(std::vector<int>& dist, int speed, int hoursBefore);//1883. 准时抵达会议现场的最小跳过休息次数-----动态规划
+
+    int threeSumClosest(std::vector<int>& nums, int target);//16. 最接近的三数之和
 };

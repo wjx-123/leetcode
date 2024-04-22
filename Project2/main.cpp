@@ -281,7 +281,11 @@ int main(int argc, char* argv[]) {
     //std::cout << so.maxArea(height) << std::endl;
     
     //15
-    std::vector<int> nums = { -1,0,1,2,-1,-4 };
-    so.threeSum(nums);
+    /*std::vector<int> nums = { -1,0,1,2,-1,-4 };
+    so.threeSum(nums);*/
+
+    //39
+    std::vector<int> candidates = {2,3,6,7};
+    so.combinationSum(candidates, 7);
     return 0;
 }
