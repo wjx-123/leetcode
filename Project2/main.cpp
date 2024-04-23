@@ -284,8 +284,9 @@ int main(int argc, char* argv[]) {
     /*std::vector<int> nums = { -1,0,1,2,-1,-4 };
     so.threeSum(nums);*/
 
-    //39
-    std::vector<int> candidates = {2,3,6,7};
-    so.combinationSum(candidates, 7);
+    //1052
+    std::vector<int> customers = { 1,0,1,2,1,1,7,5 };
+    std::vector<int> grumpy = { 0,1,0,1,0,1,0,1 };
+    std::cout << so.maxSatisfied(customers, grumpy, 3) << std::endl;
     return 0;
 }

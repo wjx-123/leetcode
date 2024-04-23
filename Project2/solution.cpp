@@ -2671,5 +2671,38 @@ int solution1::threeSumClosest(std::vector<int>& nums, int target)
     return ans;
 }
 
+int solution1::maxSatisfied(std::vector<int>& customers, std::vector<int>& grumpy, int minutes)
+{
+    int result = 0;
+    std::vector<int> need(customers.size());
+    for (int i = 0; i < customers.size(); i++)
+    {
+        //grumpy[i] == 0 ? need[i] = 0 : need[i] = customers[i];//不生气则为0，生气为原值，转化成滑动窗口大小为minutes，看在need中哪个区间框到的最大
+        if (grumpy[i] == 0)
+        {
+            need[i] = 0;
+            result += customers[i];
+        }
+        else 
+        {
+            need[i] = customers[i];
+        }
+    }
+    int i = 0, j = minutes - 1;
+    int maxOfPeo = 0;
+    while (i <= customers.size() - minutes) 
+    {
+        int tempSum = 0;
+        for (int m = i; m <= j; m++)
+        {
+            tempSum += need[m];
+        }
+        maxOfPeo = maxOfPeo > tempSum ? maxOfPeo : tempSum;
+        i++, j++;
+    }
+
+    return result + maxOfPeo;
+}
+
 
 

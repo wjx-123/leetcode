@@ -296,4 +296,6 @@ public:
     int minSkips(std::vector<int>& dist, int speed, int hoursBefore);//1883. 准时抵达会议现场的最小跳过休息次数-----动态规划
 
     int threeSumClosest(std::vector<int>& nums, int target);//16. 最接近的三数之和
+
+    int maxSatisfied(std::vector<int>& customers, std::vector<int>& grumpy, int minutes);//1052. 爱生气的书店老板
 };
