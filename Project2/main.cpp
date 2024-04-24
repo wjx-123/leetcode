@@ -285,8 +285,11 @@ int main(int argc, char* argv[]) {
     so.threeSum(nums);*/
 
     //1052
-    std::vector<int> customers = { 1,0,1,2,1,1,7,5 };
-    std::vector<int> grumpy = { 0,1,0,1,0,1,0,1 };
-    std::cout << so.maxSatisfied(customers, grumpy, 3) << std::endl;
+    //std::vector<int> customers = { 1,0,1,2,1,1,7,5 };
+    //std::vector<int> grumpy = { 0,1,0,1,0,1,0,1 };
+    //std::cout << so.maxSatisfied(customers, grumpy, 3) << std::endl;
+
+    //17
+    so.letterCombinations("23");
     return 0;
 }

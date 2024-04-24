@@ -13,6 +13,7 @@
 #include <map>
 #include <sstream>
 #include <climits>
+#include <functional>
 
 struct TreeNode {
     int val;
@@ -298,4 +299,6 @@ public:
     int threeSumClosest(std::vector<int>& nums, int target);//16. 最接近的三数之和
 
     int maxSatisfied(std::vector<int>& customers, std::vector<int>& grumpy, int minutes);//1052. 爱生气的书店老板
+
+    std::vector<std::string> letterCombinations(std::string digits);//17. 电话号码的字母组合 -------- 第一道回溯题，还不是很懂
 };

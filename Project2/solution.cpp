@@ -2704,5 +2704,27 @@ int solution1::maxSatisfied(std::vector<int>& customers, std::vector<int>& grump
     return result + maxOfPeo;
 }
 
+std::vector<std::string> solution1::letterCombinations(std::string digits)
+{
+    std::string MAPPING[10] = { "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
+
+    int n = digits.length();
+    if (n == 0) return {};
+    std::vector<std::string> ans;
+    std::string path(n, 0); // 本题 path 长度固定为 n
+    std::function<void(int)> dfs = [&](int i) {
+        if (i == n) {
+            ans.emplace_back(path);
+            return;
+        }
+        for (char c : MAPPING[digits[i] - '0']) {
+            path[i] = c; // 直接覆盖
+            dfs(i + 1);
+        }
+        };
+    dfs(0);
+    return ans;
+}
+
 
 
