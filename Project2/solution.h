@@ -301,4 +301,6 @@ public:
     int maxSatisfied(std::vector<int>& customers, std::vector<int>& grumpy, int minutes);//1052. 爱生气的书店老板
 
     std::vector<std::string> letterCombinations(std::string digits);//17. 电话号码的字母组合 -------- 第一道回溯题，还不是很懂
+
+    int distanceTraveled(int mainTank, int additionalTank);//2739. 总行驶距离
 };

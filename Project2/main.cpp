@@ -290,6 +290,10 @@ int main(int argc, char* argv[]) {
     //std::cout << so.maxSatisfied(customers, grumpy, 3) << std::endl;
 
     //17
-    so.letterCombinations("23");
+    //so.letterCombinations("23");
+
+    //2739
+    int res = so.distanceTraveled(9,2);
+    std::cout << "res:" << res << std::endl;
     return 0;
 }

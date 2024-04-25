@@ -2726,5 +2726,24 @@ std::vector<std::string> solution1::letterCombinations(std::string digits)
     return ans;
 }
 
+int solution1::distanceTraveled(int mainTank, int additionalTank)
+{
+    int tempSum = 0;//¼ÆÊýÆ÷
+    int result = 0;
+    while (mainTank > 0)
+    {
+        result++;
+        tempSum++;
+        mainTank--;
+        if (tempSum == 5 && additionalTank > 0)
+        {
+            mainTank++;
+            additionalTank--;
+            tempSum = 0;
+        }
+    }
+    return result * 10;
+}
+
 
 
