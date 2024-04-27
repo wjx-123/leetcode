@@ -122,6 +122,9 @@ private:
     //2810用 反转字符串
     std::string flipString(std::string s);
 
+    //2639用 得到数字的长度
+    int lengthOfNum(int num);
+
 private:
 
     const std::vector<int> dx = { 0, 0, 1, -1 };
@@ -303,4 +306,7 @@ public:
     std::vector<std::string> letterCombinations(std::string digits);//17. 电话号码的字母组合 -------- 第一道回溯题，还不是很懂
 
     int distanceTraveled(int mainTank, int additionalTank);//2739. 总行驶距离
+
+    std::vector<int> findColumnWidth(std::vector<std::vector<int>>& grid);//2639. 查询网格图中每一列的宽度
+
 };

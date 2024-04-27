@@ -486,6 +486,12 @@ std::string solution1::flipString(std::string s)
     return res;
 }
 
+int solution1::lengthOfNum(int num)
+{
+    std::string temp = std::to_string(num);
+    return temp.length();
+}
+
 
 std::vector<int> solution1::avoidFlood(std::vector<int>& rains)
 {
@@ -2743,6 +2749,19 @@ int solution1::distanceTraveled(int mainTank, int additionalTank)
         }
     }
     return result * 10;
+}
+
+std::vector<int> solution1::findColumnWidth(std::vector<std::vector<int>>& grid)
+{
+    std::vector<int> result(grid[0].size(),-1);
+    for (int i = 0; i < grid.size(); i++)
+    {
+        for (int j = 0; j < grid[i].size(); j++)
+        {
+            result[j] = result[j] > lengthOfNum(grid[i][j]) ? result[j] : lengthOfNum(grid[i][j]);
+        }
+    }
+    return result;
 }
 
 
