@@ -2842,5 +2842,74 @@ std::vector<std::vector<int>> solution1::diagonalSort(std::vector<std::vector<in
     return result;
 }
 
+std::vector<int> solution1::decrypt(std::vector<int>& code, int k)
+{
+    std::vector<int> result(code.size(),0);
+    if (k == 0)
+    {
+        return result;
+    }
+    for (int i = 0; i < code.size(); i++)
+    {
+        int left = k > 0 ? i + 1 : i + k;
+        int right = left + std::abs(k) - 1;//[left,right]闭区间
+        int temp = left;
+        int sum = 0,js = 0;
+        while (js < std::abs(k))
+        {
+            js++;
+            if (temp < 0)
+            {
+                temp = code.size() + temp;
+            }
+            if (temp >= code.size())
+            {
+                temp = temp - code.size();
+            }
+            sum += code[temp];
+            temp++;
+        }
+        result[i] = sum;
+    }
+    return result;
+
+    /*滑动窗口减少计算，但在测试样例中有数组越界，第一个答案是可行的*/
+    //int n = code.size();
+    //std::vector<int> result(n, 0);
+    //if (k == 0) {
+    //    return result;
+    //}
+
+    //int start = k > 0 ? 1 : n + k;
+    //int end = k > 0 ? k : -1;
+    //int sum = 0;
+
+    //// 计算初始窗口的和
+    //for (int i = start; i <= start + std::abs(k) - 1; i++) {
+    //    sum += code[i % n];
+    //}
+    //result[0] = sum;
+
+    //// 使用滑动窗口计算其他元素
+    //for (int i = 1; i < n; i++) {
+    //    // 窗口向右滑动一格
+    //    if (k > 0) {
+    //        sum -= code[start % n];
+    //        start++;
+    //        end++;
+    //        sum += code[end % n];
+    //    }
+    //    else {
+    //        sum -= code[end % n];
+    //        end++;
+    //        start++;
+    //        sum += code[start % n];
+    //    }
+    //    result[i] = sum;
+    //}
+    //return result;
+
+}
+
 
 

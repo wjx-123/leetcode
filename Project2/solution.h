@@ -311,4 +311,5 @@ public:
 
     std::vector<std::vector<int>> diagonalSort(std::vector<std::vector<int>>& mat);//1329. 将矩阵按对角线排序
 
+    std::vector<int> decrypt(std::vector<int>& code, int k); //1652. 拆炸弹
 };

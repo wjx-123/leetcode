@@ -305,7 +305,11 @@ int main(int argc, char* argv[]) {
     //}
 
     //1329
-    std::vector<std::vector<int>> mat = { {3,3,1,1} ,{2,2,1,2},{1,1,1,2} };
-    so.diagonalSort(mat);
+    /*std::vector<std::vector<int>> mat = { {3,3,1,1} ,{2,2,1,2},{1,1,1,2} };
+    so.diagonalSort(mat);*/
+
+    //1652
+    std::vector<int> code = { 5,7,1,4 };
+    so.decrypt(code, 3);
     return 0;
 }
