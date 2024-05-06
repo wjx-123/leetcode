@@ -2764,5 +2764,83 @@ std::vector<int> solution1::findColumnWidth(std::vector<std::vector<int>>& grid)
     return result;
 }
 
+std::vector<std::vector<int>> solution1::diagonalSort(std::vector<std::vector<int>>& mat)
+{
+    /*这一段只处理了下半部分，上半部分忽略了*/
+    //std::vector<std::vector<int>> result(mat.size(), std::vector<int>(mat[0].size(), -1));
+    //for (int i = 0; i < mat.size(); i++) //每次取最左边这列的一个作为起始点
+    //{
+    //    int m = i,n = 0;
+    //    std::vector<int> temp;
+    //    while (m < mat.size() && n < mat[0].size())
+    //    {
+    //        temp.push_back(mat[m][n]);
+    //        m++, n++;
+    //    }
+    //    std::sort(temp.begin(),temp.end());
+    //    m = i, n = 0;
+    //    int sentinel = 0;
+    //    while (m < mat.size() && n < mat[0].size() && sentinel < temp.size())
+    //    {
+    //        result[m][n] = temp[sentinel];
+    //        sentinel++, m++ ,n++;
+    //    }
+    //}
+    //return result;
+
+    /*这次用了两个for循环，一个处理上半部分，一个处理下半部分，思路和上面一样*/
+    std::vector<std::vector<int>> result(mat.size(), std::vector<int>(mat[0].size(), -1));
+
+    // 遍历每一列
+    for (int j = 0; j < mat[0].size(); j++) {
+        int m = 0, n = j;
+        std::vector<int> temp;
+
+        // 遍历对角线
+        while (m < mat.size() && n < mat[0].size()) {
+            temp.push_back(mat[m][n]);
+            m++, n++;
+        }
+
+        // 对对角线元素排序
+        std::sort(temp.begin(), temp.end());
+
+        m = 0, n = j;
+        int sentinel = 0;
+
+        // 将排序后的对角线元素放回到矩阵中
+        while (m < mat.size() && n < mat[0].size() && sentinel < temp.size()) {
+            result[m][n] = temp[sentinel];
+            sentinel++, m++, n++;
+        }
+    }
+
+    // 遍历每一行（不包括第一行）
+    for (int i = 1; i < mat.size(); i++) {
+        int m = i, n = 0;
+        std::vector<int> temp;
+
+        // 遍历对角线
+        while (m < mat.size() && n < mat[0].size()) {
+            temp.push_back(mat[m][n]);
+            m++, n++;
+        }
+
+        // 对对角线元素排序
+        std::sort(temp.begin(), temp.end());
+
+        m = i, n = 0;
+        int sentinel = 0;
+
+        // 将排序后的对角线元素放回到矩阵中
+        while (m < mat.size() && n < mat[0].size() && sentinel < temp.size()) {
+            result[m][n] = temp[sentinel];
+            sentinel++, m++, n++;
+        }
+    }
+
+    return result;
+}
+
 
 

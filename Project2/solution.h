@@ -309,4 +309,6 @@ public:
 
     std::vector<int> findColumnWidth(std::vector<std::vector<int>>& grid);//2639. 查询网格图中每一列的宽度
 
+    std::vector<std::vector<int>> diagonalSort(std::vector<std::vector<int>>& mat);//1329. 将矩阵按对角线排序
+
 };

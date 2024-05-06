@@ -297,11 +297,15 @@ int main(int argc, char* argv[]) {
     //std::cout << "res:" << res << std::endl;
 
     //2369
-    std::vector<std::vector<int>> grid = { {1},{22},{333} };//{-15,1,3},{15,7,12},{5,6,-2}
-    auto temp = so.findColumnWidth(grid);
-    for (auto i : temp)
-    {
-        std::cout << "*" << i << std::endl;
-    }
+    //std::vector<std::vector<int>> grid = { {1},{22},{333} };//{-15,1,3},{15,7,12},{5,6,-2}
+    //auto temp = so.findColumnWidth(grid);
+    //for (auto i : temp)
+    //{
+    //    std::cout << "*" << i << std::endl;
+    //}
+
+    //1329
+    std::vector<std::vector<int>> mat = { {3,3,1,1} ,{2,2,1,2},{1,1,1,2} };
+    so.diagonalSort(mat);
     return 0;
 }
