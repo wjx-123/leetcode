@@ -312,4 +312,8 @@ public:
     std::vector<std::vector<int>> diagonalSort(std::vector<std::vector<int>>& mat);//1329. 将矩阵按对角线排序
 
     std::vector<int> decrypt(std::vector<int>& code, int k); //1652. 拆炸弹
+
+    int wateringPlants(std::vector<int>& plants, int capacity);//2079. 给植物浇水
+
+    long long totalCost(std::vector<int>& costs, int k, int candidates);//2462. 雇佣 K 位工人的总代价
 };

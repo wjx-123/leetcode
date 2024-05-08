@@ -309,7 +309,11 @@ int main(int argc, char* argv[]) {
     so.diagonalSort(mat);*/
 
     //1652
-    std::vector<int> code = { 5,7,1,4 };
-    so.decrypt(code, 3);
+    /*std::vector<int> code = { 5,7,1,4 };
+    so.decrypt(code, 3);*/
+        
+    //2079
+    std::vector<int> plants = { 2,2,3,3 };
+    std::cout << so.wateringPlants(plants, 5) << std::endl;
     return 0;
 }

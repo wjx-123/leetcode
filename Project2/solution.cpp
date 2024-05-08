@@ -2911,5 +2911,36 @@ std::vector<int> solution1::decrypt(std::vector<int>& code, int k)
 
 }
 
+int solution1::wateringPlants(std::vector<int>& plants, int capacity)
+{
+    int result = 0;
+    int waterNum = capacity;
+
+    for (int i = 0; i < plants.size(); )
+    {
+        if (waterNum >= plants[i]) 
+        {
+            result++;
+            waterNum -= plants[i];
+            i++;
+        }
+        else
+        {
+            result = result + i * 2 ;
+            waterNum = capacity;
+        }
+    }
+    return result;
+}
+
+long long solution1::totalCost(std::vector<int>& costs, int k, int candidates)
+{
+    for (int i = 0; i < k; i++)
+    {
+        //costs.erase(0,1);
+    }
+    return 0;
+}
+
 
 
