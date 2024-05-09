@@ -315,5 +315,7 @@ public:
 
     int wateringPlants(std::vector<int>& plants, int capacity);//2079. 给植物浇水
 
-    long long totalCost(std::vector<int>& costs, int k, int candidates);//2462. 雇佣 K 位工人的总代价
+    long long totalCost(std::vector<int>& costs, int k, int candidates);//2462. 雇佣 K 位工人的总代价 ---正好复习大小根堆 还没完
+
+    int minimumRefill(std::vector<int>& plants, int capacityA, int capacityB);//2105. 给植物浇水 II
 };

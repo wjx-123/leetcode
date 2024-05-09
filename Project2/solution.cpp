@@ -2942,5 +2942,35 @@ long long solution1::totalCost(std::vector<int>& costs, int k, int candidates)
     return 0;
 }
 
+int solution1::minimumRefill(std::vector<int>& plants, int capacityA, int capacityB)
+{
+    int result = 0, waterOfA = capacityA, waterOfB = capacityB;
+    int i = 0, j = plants.size() - 1;
+    while (i <= j)
+    {
+        if (i == j) 
+        {
+            /*
+            * 注:!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            * 这两行，第一行写法是错误的，result++ 是一个后置增量运算，意味着它会返回 result 的当前值，并在表达式求值后将 result 的值增加 1。
+            * 然而，这里的使用方式会导致一种未定义行为（Undefined Behavior），因为 result 在没有序列点的情况下被修改并重新赋值。C++ 标准规定，
+            * 在同一个序列点中对同一变量进行修改以及再次读取（除了确定变量的新值所必需的读取）是未定义的
+            * 若改为后置的虽然可能达到和+1一样的效果，但仍是未定义行为
+            */
+            /*result = (waterOfA >= plants[i] || waterOfB >= plants[i]) ? result : result++;*/
+            /*result = (waterOfA >= plants[i] || waterOfB >= plants[i]) ? result : result + 1;*/
+            if (waterOfA < plants[i] && waterOfB < plants[i]) {
+                result++;
+            }
+            return result;
+        }
+        waterOfA >= plants[i] ? (waterOfA = waterOfA - plants[i]) : (waterOfA = capacityA - plants[i], result++);
+        i++;
+        waterOfB >= plants[j] ? (waterOfB = waterOfB - plants[j]) : (waterOfB = capacityB - plants[j], result++);
+        j--;
+    }
+    return result;
+}
+
 
 

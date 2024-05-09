@@ -313,7 +313,11 @@ int main(int argc, char* argv[]) {
     so.decrypt(code, 3);*/
         
     //2079
-    std::vector<int> plants = { 2,2,3,3 };
-    std::cout << so.wateringPlants(plants, 5) << std::endl;
+    /*std::vector<int> plants = { 2,2,3,3 };
+    std::cout << so.wateringPlants(plants, 5) << std::endl;*/
+    
+    //2105
+    std::vector<int> plants = { 1,2,4,4,5 };
+    std::cout << so.minimumRefill(plants, 6, 5) << std::endl;
     return 0;
 }
