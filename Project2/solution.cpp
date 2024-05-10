@@ -2972,5 +2972,19 @@ int solution1::minimumRefill(std::vector<int>& plants, int capacityA, int capaci
     return result;
 }
 
+int solution1::countTestedDevices(std::vector<int>& batteryPercentages)
+{//temp其实没必要，用result就行
+    int result = 0, temp = 0;
+    for (int i = 0; i < batteryPercentages.size(); i++)
+    {
+        if (batteryPercentages[i] - temp > 0)
+        {
+            temp++;
+            result++;
+        }
+    }
+    return result;
+}
+
 
 
