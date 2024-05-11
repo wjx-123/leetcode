@@ -320,4 +320,6 @@ public:
     int minimumRefill(std::vector<int>& plants, int capacityA, int capacityB);//2105. 给植物浇水 II
 
     int countTestedDevices(std::vector<int>& batteryPercentages);//2960. 统计已测试设备
+
+    int garbageCollection(std::vector<std::string>& garbage, std::vector<int>& travel);//2391. 收集垃圾的最少总时间
 };

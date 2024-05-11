@@ -2986,5 +2986,33 @@ int solution1::countTestedDevices(std::vector<int>& batteryPercentages)
     return result;
 }
 
+int solution1::garbageCollection(std::vector<std::string>& garbage, std::vector<int>& travel)
+{
+    int n = garbage.size();
+    std::vector<int> presum(n, 0);
+    for (int i = 1; i < n; i++) {
+        presum[i] = presum[i - 1] + travel[i - 1];
+    }
+    // 从前往后求出三者的时间
+    int res = 0, ml = 0, pl = 0,
+        gl = 0; // 分别记录处理时间、M所要行走的时间...
+    for (int i = 0; i < n; i++) {
+        res += garbage[i].size();
+        for (auto& c : garbage[i]) {
+            if (c == 'M') {
+                ml = presum[i];
+            }
+            if (c == 'P') {
+                pl = presum[i];
+            }
+            if (c == 'G') {
+                gl = presum[i];
+            }
+        }
+    }
+
+    return res + ml + pl + gl;
+}
+
 
 
