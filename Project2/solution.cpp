@@ -1914,7 +1914,7 @@ int solution1::climbStairs(int n)
 {
     memo.resize(n + 1);
     return dfs_70(n);
-    return 0;
+    //return 0;
 }
 
 int solution1::reachableNodes(int n, std::vector<std::vector<int>>& edges, std::vector<int>& restricted)
@@ -3012,6 +3012,75 @@ int solution1::garbageCollection(std::vector<std::string>& garbage, std::vector<
     }
 
     return res + ml + pl + gl;
+}
+
+int solution1::orangesRotting(std::vector<std::vector<int>>& grid)
+{
+    std::queue<std::pair<int, int>> orangeQue;
+    int fresh = 0,result = 0;
+    std::vector<std::pair<int, int>> direction = { {-1,0},{1,0},{0,1},{0,-1} };//定义四个方向
+    //先把腐烂的位置以及新鲜的个数得出
+    for (int i = 0; i < grid.size(); i++)
+    {
+        for (int j = 0; j < grid[0].size(); j++) 
+        {
+            if (grid[i][j] == 2)
+            {
+                orangeQue.push({i,j});
+            }
+            else if (grid[i][j] == 1) 
+            {
+                fresh++;
+            }
+        }
+    }
+    while (!orangeQue.empty())//当队列为空时则全部处理完，每一轮把新腐烂的橘子加入队列，老腐烂的剔除
+    {
+        int tempOfNum = orangeQue.size();
+        bool ifResPlus = false;
+        for (int i = 0; i < tempOfNum; i++)
+        {
+            std::pair<int, int> iniOrange = orangeQue.front();
+            orangeQue.pop();
+            for (int j = 0; j < direction.size(); j++)
+            {
+                int m = iniOrange.first + direction[j].first;
+                int n = iniOrange.second + direction[j].second;
+                if (m >= 0 && m <grid.size() && n >= 0 && n < grid[0].size() && grid[m][n] == 1)
+                {
+                    grid[m][n] = 2;
+                    orangeQue.push({m,n});
+                    fresh--;
+                    ifResPlus = true;
+                }
+            }
+            /*ifResPlus = true;*/
+        }
+        if (ifResPlus == true)
+        {
+            result++;
+        }
+    }
+
+    return fresh == 0 ? result : -1;
+}
+
+int solution1::minDays(int n)//这种方法会超时
+{
+    if (n <= 1)
+    {
+        return n;
+    }
+    if (vis[n]) 
+    {
+        return vis[n];
+    }
+    int a = INT_MAX, b = INT_MAX, c = INT_MAX;
+    if (n % 2 == 0) a = 1 + minDays(n / 2);
+    if (n % 3 == 0) b = 1 + minDays(n / 3);
+    c = 1 + minDays(n - 1);
+    vis[n] = std::min({ a,b,c });
+    return minDays(n);
 }
 
 

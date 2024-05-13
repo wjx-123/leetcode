@@ -317,7 +317,11 @@ int main(int argc, char* argv[]) {
     std::cout << so.wateringPlants(plants, 5) << std::endl;*/
     
     //2105
-    std::vector<int> plants = { 1,2,4,4,5 };
-    std::cout << so.minimumRefill(plants, 6, 5) << std::endl;
+    /*std::vector<int> plants = { 1,2,4,4,5 };
+    std::cout << so.minimumRefill(plants, 6, 5) << std::endl;*/
+
+    //994
+    std::vector<std::vector<int>> grid = { {2,1,1} ,{1,1,0},{0,1,1} };
+    std::cout<< so.orangesRotting(grid) <<std::endl;
     return 0;
 }

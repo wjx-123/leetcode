@@ -139,6 +139,8 @@ private:
 
     std::vector<int> memo;//70用，记忆功能
 
+    std::unordered_map<int, int> vis;//1553用 吃橘子逻辑 -- 动态规划
+
 public:
     std::vector<int> nextGreaterElement(std::vector<int>& nums1, std::vector<int>& nums2);//496
 
@@ -322,4 +324,8 @@ public:
     int countTestedDevices(std::vector<int>& batteryPercentages);//2960. 统计已测试设备
 
     int garbageCollection(std::vector<std::string>& garbage, std::vector<int>& travel);//2391. 收集垃圾的最少总时间
+
+    int orangesRotting(std::vector<std::vector<int>>& grid);//994. 腐烂的橘子
+
+    int minDays(int n);//1553. 吃掉 N 个橘子的最少天数 --- 动态规划
 };
