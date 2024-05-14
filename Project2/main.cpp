@@ -321,7 +321,11 @@ int main(int argc, char* argv[]) {
     std::cout << so.minimumRefill(plants, 6, 5) << std::endl;*/
 
     //994
-    std::vector<std::vector<int>> grid = { {2,1,1} ,{1,1,0},{0,1,1} };
-    std::cout<< so.orangesRotting(grid) <<std::endl;
+    //std::vector<std::vector<int>> grid = { {2,1,1} ,{1,1,0},{0,1,1} };
+    //std::cout<< so.orangesRotting(grid) <<std::endl;
+
+    //2244
+    std::vector<int> tasks = { 7,7,7,7,7,7 };//2,2,3,3,2,4,4,4,4,4
+    so.minimumRounds(tasks);
     return 0;
 }

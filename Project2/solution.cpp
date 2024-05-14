@@ -492,6 +492,45 @@ int solution1::lengthOfNum(int num)
     return temp.length();
 }
 
+bool solution1::is_multiple_or_sum_of_multiples(int n, int& count2, int& count3)
+{
+    // 初始化计数器
+    count2 = 0;
+    count3 = 0;
+
+    // 判断是否是2或3的倍数
+    if (n % 2 == 0) {
+        count2 = n / 2;  // n是2的倍数，计算有多少个2
+    }
+    if (n % 3 == 0) {
+        count3 = n / 3;  // n是3的倍数，计算有多少个3
+    }
+    if (count2 > 0 && count3 > 0) {
+        // 如果同时是2和3的倍数，取较小的count值
+        if (count2 < count3) {
+            count3 = 0;  // 只返回count2
+        }
+        else {
+            count2 = 0;  // 只返回count3
+        }
+    }
+    if (count2 > 0 || count3 > 0) {
+        return true;
+    }
+
+    // 判断是否可以是2和3的倍数之和
+    for (int i = 0; i <= n / 2; i++) {
+        for (int j = 0; j <= n / 3; j++) {
+            if (i * 2 + j * 3 == n) {
+                count2 = i;
+                count3 = j;
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
 
 std::vector<int> solution1::avoidFlood(std::vector<int>& rains)
 {
@@ -3081,6 +3120,32 @@ int solution1::minDays(int n)//这种方法会超时
     c = 1 + minDays(n - 1);
     vis[n] = std::min({ a,b,c });
     return minDays(n);
+}
+
+int solution1::minimumRounds(std::vector<int>& tasks)
+{
+    int result = 0;
+    std::sort(tasks.begin(),tasks.end());
+    int i = 0, j = 1;
+    while (i < tasks.size() - 1) 
+    {
+        int temp = tasks[i];
+        auto itea = std::upper_bound(tasks.begin(),tasks.end(),temp);
+        j = itea - tasks.begin();
+        int num = j - i;
+        /*if (num % 2 != 0 && num % 3 != 0)
+        {
+            return -1;
+        }*/
+        int numOF2 = 0, numOf3 = 0;
+        if (is_multiple_or_sum_of_multiples(num,numOF2,numOf3) == false)
+        {
+            return -1;
+        }
+        i = j;
+        result = result + numOF2 + numOf3;
+    }
+    return result;
 }
 
 

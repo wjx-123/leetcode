@@ -125,6 +125,9 @@ private:
     //2639用 得到数字的长度
     int lengthOfNum(int num);
 
+    //2244. 完成所有任务需要的最少轮数,判断是否是2或3的倍数和是否可以是2和3的倍数之和
+    bool is_multiple_or_sum_of_multiples(int n, int& count2, int& count3);
+
 private:
 
     const std::vector<int> dx = { 0, 0, 1, -1 };
@@ -328,4 +331,6 @@ public:
     int orangesRotting(std::vector<std::vector<int>>& grid);//994. 腐烂的橘子
 
     int minDays(int n);//1553. 吃掉 N 个橘子的最少天数 --- 动态规划
+
+    int minimumRounds(std::vector<int>& tasks);//2244. 完成所有任务需要的最少轮数
 };
