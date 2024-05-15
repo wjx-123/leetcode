@@ -325,7 +325,10 @@ int main(int argc, char* argv[]) {
     //std::cout<< so.orangesRotting(grid) <<std::endl;
 
     //2244
-    std::vector<int> tasks = { 7,7,7,7,7,7 };//2,2,3,3,2,4,4,4,4,4
-    so.minimumRounds(tasks);
+    //std::vector<int> tasks = { 7,7,7,7,7,7 };//2,2,3,3,2,4,4,4,4,4
+    //so.minimumRounds(tasks);
+        
+    std::vector<std::vector<int>> res = { {2,3,1} ,{4,5,1},{1,5,2} };
+    so.findMinimumTime(res);
     return 0;
 }

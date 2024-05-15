@@ -3148,5 +3148,35 @@ int solution1::minimumRounds(std::vector<int>& tasks)
     return result;
 }
 
+int solution1::findMinimumTime(std::vector<std::vector<int>>& tasks)
+{
+    std::set<int> res;
+    std::sort(tasks.begin(),tasks.end(), [](auto& a, auto& b) { return a[1] < b[1]; });
+    for (int i = 0; i < tasks.size(); i++)
+    {
+        int n = tasks[i][2];
+        for (int j = tasks[i][0]; j <= tasks[i][1]; j++)//排除已经在区间内的数
+        {
+            if (res.count(j) == 1) //包含
+            {
+                n--;
+            }
+        }
+        for (int j = 0; j < n; j++)//把剩下的数按照右端点往左的顺序存入
+        {
+            int temp = tasks[i][1] - j;//右端点 - j
+            if (res.count(temp) == 0)
+            {
+                res.insert(temp);
+            }
+            else //之前有这个数，跳过
+            {
+                n++;
+            }
+        }
+    }
+    return res.size();
+}
+
 
 
