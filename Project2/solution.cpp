@@ -3178,5 +3178,31 @@ int solution1::findMinimumTime(std::vector<std::vector<int>>& tasks)
     return res.size();
 }
 
+long long solution1::numberOfWeeks(std::vector<int>& milestones)
+{
+    /*双指针，没写完*/
+    //long long result = 0;
+    //std::sort(milestones.begin(),milestones.end());//升序
+    //bool ifIOrJ = true;//true是后，false前
+    //int i = milestones.size() - 2,j = i + 1;//后两个
+    //if (i < 0)
+    //{
+    //    return 1;
+    //}
+    //while (i >= 0)
+    //{
+    //    ifIOrJ == true ? milestones[j]-- : milestones[i]--;
+    //    result++;
+
+    //}
+    /*
+    * 数学归纳法
+    */
+    long long s = std::reduce(milestones.begin(), milestones.end(), 0LL);
+    long long m = std::ranges::max(milestones);
+    return m > s - m + 1 ? (s - m) * 2 + 1 : s;
+    return 0;
+}
+
 
 

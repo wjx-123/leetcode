@@ -14,6 +14,7 @@
 #include <sstream>
 #include <climits>
 #include <functional>
+#include <numeric>
 
 struct TreeNode {
     int val;
@@ -335,4 +336,6 @@ public:
     int minimumRounds(std::vector<int>& tasks);//2244. 完成所有任务需要的最少轮数
 
     int findMinimumTime(std::vector<std::vector<int>>& tasks);//2589. 完成所有任务的最少时间
+
+    long long numberOfWeeks(std::vector<int>& milestones);//1953. 你可以工作的最大周数
 };
