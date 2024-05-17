@@ -327,8 +327,16 @@ int main(int argc, char* argv[]) {
     //2244
     //std::vector<int> tasks = { 7,7,7,7,7,7 };//2,2,3,3,2,4,4,4,4,4
     //so.minimumRounds(tasks);
-        
-    std::vector<std::vector<int>> res = { {2,3,1} ,{4,5,1},{1,5,2} };
-    so.findMinimumTime(res);
+    
+    //2589
+    /*std::vector<std::vector<int>> res = { {2,3,1} ,{4,5,1},{1,5,2} };
+    so.findMinimumTime(res);*/
+
+    //826
+    std::vector<int> dif = { 68,35,52,47,86 };
+    std::vector<int> pro = { 67,17,1,81,3 };
+    std::vector<int> wo = { 92,10,85,84,82 };
+    so.maxProfitAssignment(dif,pro,wo);
+
     return 0;
 }

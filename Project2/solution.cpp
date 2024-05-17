@@ -3204,5 +3204,30 @@ long long solution1::numberOfWeeks(std::vector<int>& milestones)
     return 0;
 }
 
+int solution1::maxProfitAssignment(std::vector<int>& difficulty, std::vector<int>& profit, std::vector<int>& worker)
+{
+    int result = 0;
+    std::vector<std::pair<int, int>> temp;
+    for (int i = 0; i < difficulty.size(); i++)
+    {
+        std::pair<int, int> t = {difficulty[i], profit[i]};
+        temp.push_back(t);
+    }
+    std::sort(temp.begin(),temp.end());
+    std::sort(worker.begin(),worker.end());
+    //在遍历worker时，后一个可以直接在前一个的基础上接着查找，因为肯定比前一个worker大
+    int j = 0, max_num = 0;;
+    for (int i = 0; i < worker.size(); i++)
+    {
+        while (temp[j].first <= worker[i] && j < temp.size()) 
+        {
+            max_num = std::max(max_num, temp[j].second);
+            j++;
+        }
+        result += j > 0 ? max_num : 0;
+    }
+    return result;
+}
+
 
 

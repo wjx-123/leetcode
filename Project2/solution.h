@@ -338,4 +338,6 @@ public:
     int findMinimumTime(std::vector<std::vector<int>>& tasks);//2589. 完成所有任务的最少时间
 
     long long numberOfWeeks(std::vector<int>& milestones);//1953. 你可以工作的最大周数
+
+    int maxProfitAssignment(std::vector<int>& difficulty, std::vector<int>& profit, std::vector<int>& worker);//826. 安排工作以达到最大收益
 };
