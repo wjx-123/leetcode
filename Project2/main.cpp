@@ -333,10 +333,14 @@ int main(int argc, char* argv[]) {
     so.findMinimumTime(res);*/
 
     //826
-    std::vector<int> dif = { 68,35,52,47,86 };
-    std::vector<int> pro = { 67,17,1,81,3 };
-    std::vector<int> wo = { 92,10,85,84,82 };
-    so.maxProfitAssignment(dif,pro,wo);
+    //std::vector<int> dif = { 68,35,52,47,86 };
+    //std::vector<int> pro = { 67,17,1,81,3 };
+    //std::vector<int> wo = { 92,10,85,84,82 };
+    //so.maxProfitAssignment(dif,pro,wo);
 
+    //2644
+    std::vector<int> nums = { 73,13,20,6 };
+    std::vector<int> div = { 56,75,83,26,24,53,56,61 };
+    so.maxDivScore(nums,div);
     return 0;
 }

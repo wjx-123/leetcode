@@ -340,4 +340,6 @@ public:
     long long numberOfWeeks(std::vector<int>& milestones);//1953. 你可以工作的最大周数
 
     int maxProfitAssignment(std::vector<int>& difficulty, std::vector<int>& profit, std::vector<int>& worker);//826. 安排工作以达到最大收益
+
+    int maxDivScore(std::vector<int>& nums, std::vector<int>& divisors);//2644. 找出可整除性得分最大的整数
 };

@@ -3229,5 +3229,32 @@ int solution1::maxProfitAssignment(std::vector<int>& difficulty, std::vector<int
     return result;
 }
 
+int solution1::maxDivScore(std::vector<int>& nums, std::vector<int>& divisors)
+{
+    int max = 0;
+    std::set<int> newDiv;//用set保证唯一且升序
+    std::sort(nums.begin(),nums.end());//小于本身的数肯定不能被整除，这部分跳过即可，节约时间
+    for (int i = 0; i < divisors.size(); i++)
+    {
+        newDiv.insert(divisors[i]);
+    }
+    int result = *newDiv.begin();
+    for (int i : newDiv)
+    {
+        int numOfI = 0;//当前能被整除的数量
+        int j = std::lower_bound(nums.begin(),nums.end(),i) - nums.begin();//找到第一个大于等于i的位置
+        while (j < nums.size())
+        {
+            nums[j] % i == 0 ? (numOfI++,j++) : j++;
+        }
+        if (numOfI > max)
+        {
+            max = numOfI;
+            result = i;
+        }
+    }
+    return result;
+}
+
 
 
