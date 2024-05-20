@@ -3256,5 +3256,36 @@ int solution1::maxDivScore(std::vector<int>& nums, std::vector<int>& divisors)
     return result;
 }
 
+int solution1::longestAwesome(std::string s)
+{
+    /*模拟退火算法可以学一下*/
+    /*这一段没有考虑题目中说得是连续的子字符串，没读懂题*/
+    int result = 0;
+    std::map<int, int> temp;
+    for (int i = 0; i < s.length(); i++)
+    {
+        if(temp.find(s[i]) == temp.end())//没有
+        {
+            temp.insert(std::pair<int,int>(s[i], 1));
+        }
+        else//有
+        {
+            temp[s[i]] = temp[s[i]] + 1;
+        }
+    }
+    for (auto &t : temp)
+    {
+        if (t.second % 2 == 0) //满足情况
+        {
+            result = result + t.second;
+        }
+        else if (t.second != 1 && (t.second & 2) != 0)
+        {
+            result = result + t.second - 1;
+        }
+    }
+    return result < s.length() ? ++result : result;
+}
+
 
 

@@ -342,4 +342,6 @@ public:
     int maxProfitAssignment(std::vector<int>& difficulty, std::vector<int>& profit, std::vector<int>& worker);//826. 安排工作以达到最大收益
 
     int maxDivScore(std::vector<int>& nums, std::vector<int>& divisors);//2644. 找出可整除性得分最大的整数
+
+    int longestAwesome(std::string s);//1542. 找出最长的超赞子字符串
 };
