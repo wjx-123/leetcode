@@ -3287,5 +3287,29 @@ int solution1::longestAwesome(std::string s)
     return result < s.length() ? ++result : result;
 }
 
+std::vector<std::vector<int>> solution1::findWinners(std::vector<std::vector<int>>& matches)
+{
+    std::unordered_map<int, int> count;
+    for (auto& i : matches)
+    {
+        if (!count.contains(i[0])) 
+        {
+            count[i[0]] = 0;
+        }
+        count[i[1]]++;
+    }
+    std::vector<std::vector<int>> result(2);
+    for (auto& [player,cnt] : count)
+    {
+        if (cnt < 2)
+        {
+            result[cnt].push_back(player);
+        }
+    }
+    std::ranges::sort(result[0]);
+    std::ranges::sort(result[1]);
+    return result;
+}
+
 
 

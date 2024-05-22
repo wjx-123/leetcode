@@ -339,8 +339,12 @@ int main(int argc, char* argv[]) {
     //so.maxProfitAssignment(dif,pro,wo);
 
     //2644
-    std::vector<int> nums = { 73,13,20,6 };
-    std::vector<int> div = { 56,75,83,26,24,53,56,61 };
-    so.maxDivScore(nums,div);
+    //std::vector<int> nums = { 73,13,20,6 };
+    //std::vector<int> div = { 56,75,83,26,24,53,56,61 };
+    //so.maxDivScore(nums,div);
+
+    //2225
+    std::vector<std::vector<int>> res = { {1,3} ,{2,3},{3,6},{5,6},{5,7},{4,5},{4,8},{4,9},{10,4},{10,9} };
+    so.findWinners(res);
     return 0;
 }

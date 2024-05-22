@@ -343,5 +343,7 @@ public:
 
     int maxDivScore(std::vector<int>& nums, std::vector<int>& divisors);//2644. 找出可整除性得分最大的整数
 
-    int longestAwesome(std::string s);//1542. 找出最长的超赞子字符串
+    int longestAwesome(std::string s);//1542. 找出最长的超赞子字符串--crazy
+
+    std::vector<std::vector<int>> findWinners(std::vector<std::vector<int>>& matches);//2225. 找出输掉零场或一场比赛的玩家
 };
