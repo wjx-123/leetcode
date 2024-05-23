@@ -346,4 +346,6 @@ public:
     int longestAwesome(std::string s);//1542. 找出最长的超赞子字符串--crazy
 
     std::vector<std::vector<int>> findWinners(std::vector<std::vector<int>>& matches);//2225. 找出输掉零场或一场比赛的玩家
+
+    int longestEqualSubarray(std::vector<int>& nums, int k);//2831. 找出最长等值子数组
 };

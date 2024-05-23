@@ -3311,5 +3311,27 @@ std::vector<std::vector<int>> solution1::findWinners(std::vector<std::vector<int
     return result;
 }
 
+int solution1::longestEqualSubarray(std::vector<int>& nums, int k)
+{
+    int result = 0;
+    std::unordered_map<int, std::vector<int>> temp;
+    for (int i = 0; i < nums.size(); i++)
+    {
+        temp[nums[i]].emplace_back(i);
+    }
+    for (auto &[_,vectorOfN] : temp)
+    {
+        for (int i = 0, j = 0; i < vectorOfN.size(); i++) 
+        {
+            while (vectorOfN[i] - vectorOfN[j] - (i - j) > k)
+            {
+                j++;
+            }
+            result = std::max(result,i - j + 1);
+        }
+    }
+    return result;
+}
+
 
 
