@@ -129,6 +129,9 @@ private:
     //2244. 完成所有任务需要的最少轮数,判断是否是2或3的倍数和是否可以是2和3的倍数之和
     bool is_multiple_or_sum_of_multiples(int n, int& count2, int& count3);
 
+    //1673用 找出当前的最小值 start是左端点，min是找到的最小值，temp是找到的索引
+    void findMin(std::vector<int>& nums, int start, int& min, int& temp,int k);
+
 private:
 
     const std::vector<int> dx = { 0, 0, 1, -1 };
@@ -348,4 +351,6 @@ public:
     std::vector<std::vector<int>> findWinners(std::vector<std::vector<int>>& matches);//2225. 找出输掉零场或一场比赛的玩家
 
     int longestEqualSubarray(std::vector<int>& nums, int k);//2831. 找出最长等值子数组
+
+    std::vector<int> mostCompetitive(std::vector<int>& nums, int k);
 };

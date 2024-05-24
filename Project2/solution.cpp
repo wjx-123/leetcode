@@ -532,6 +532,19 @@ bool solution1::is_multiple_or_sum_of_multiples(int n, int& count2, int& count3)
     return false;
 }
 
+void solution1::findMin(std::vector<int>& nums, int start, int& min, int& temp, int k)
+{
+    min = INT_MAX;
+    for (int i = start; i < nums.size() - k; i++)
+    {
+        if (nums[i] < min)
+        {
+            min = nums[i];
+            temp = i;
+        }
+    }
+}
+
 std::vector<int> solution1::avoidFlood(std::vector<int>& rains)
 {
     int temp = findFirstNonZeroIndex(rains);//第一个不为零元素的索引
@@ -3331,6 +3344,36 @@ int solution1::longestEqualSubarray(std::vector<int>& nums, int k)
         }
     }
     return result;
+}
+
+std::vector<int> solution1::mostCompetitive(std::vector<int>& nums, int k)
+{
+    /*递归法，时间长，且没有考虑没有找到最小值的情况*/
+ /*   std::vector<int> result;
+    int start = 0;
+    int temp = 0;
+    int aaa = INT_MAX;
+    while (result.size() < k)
+    {
+        start = temp;
+        findMin(nums,start,aaa,temp,k);
+        result.push_back(aaa);
+    }
+    return result;*/
+
+    /*单调栈*/
+    std::vector<int> st;
+    for (int i = 0; i < nums.size(); i++) {
+        int x = nums[i];
+        while (!st.empty() && x < st.back() && st.size() + nums.size() - i > k) {
+            st.pop_back();
+        }
+        if (st.size() < k) {
+            st.push_back(x);
+        }
+    }
+    return st;
+
 }
 
 
