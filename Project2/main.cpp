@@ -344,7 +344,11 @@ int main(int argc, char* argv[]) {
     //so.maxDivScore(nums,div);
 
     //2225
-    std::vector<std::vector<int>> res = { {1,3} ,{2,3},{3,6},{5,6},{5,7},{4,5},{4,8},{4,9},{10,4},{10,9} };
-    so.findWinners(res);
+ /*   std::vector<std::vector<int>> res = { {1,3} ,{2,3},{3,6},{5,6},{5,7},{4,5},{4,8},{4,9},{10,4},{10,9} };
+    so.findWinners(res);*/
+
+    //2903
+    std::vector<int> nums = {31,23,36};
+    so.findIndices(nums,1,11);
     return 0;
 }

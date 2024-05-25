@@ -3376,5 +3376,30 @@ std::vector<int> solution1::mostCompetitive(std::vector<int>& nums, int k)
 
 }
 
+std::vector<int> solution1::findIndices(std::vector<int>& nums, int indexDifference, int valueDifference)
+{
+    std::vector<int> result;
+    int i = 0, j = i + indexDifference;
+    while (i < nums.size() - indexDifference  && j < nums.size())
+    {
+        if (std::abs(nums[i] - nums[j]) >= valueDifference) 
+        {
+            result.push_back(i);
+            result.push_back(j);
+            return result;
+        }
+        if (j < nums.size() - 1)
+        {
+            j++;
+        }
+        else
+        {
+            i++;
+            j = i + indexDifference;
+        }
+    }
+    return {-1,-1};
+}
+
 
 

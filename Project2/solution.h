@@ -352,5 +352,7 @@ public:
 
     int longestEqualSubarray(std::vector<int>& nums, int k);//2831. 找出最长等值子数组
 
-    std::vector<int> mostCompetitive(std::vector<int>& nums, int k);
+    std::vector<int> mostCompetitive(std::vector<int>& nums, int k);//1673. 找出最具竞争力的子序列
+
+    std::vector<int> findIndices(std::vector<int>& nums, int indexDifference, int valueDifference);//2903. 找出满足差值条件的下标 I
 };
