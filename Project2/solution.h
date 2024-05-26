@@ -355,4 +355,6 @@ public:
     std::vector<int> mostCompetitive(std::vector<int>& nums, int k);//1673. 找出最具竞争力的子序列
 
     std::vector<int> findIndices(std::vector<int>& nums, int indexDifference, int valueDifference);//2903. 找出满足差值条件的下标 I
+
+    int kthLargestValue(std::vector<std::vector<int>>& matrix, int k);//1738. 找出第 K 大的异或坐标值
 };
