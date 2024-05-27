@@ -132,6 +132,9 @@ private:
     //1673用 找出当前的最小值 start是左端点，min是找到的最小值，temp是找到的索引
     void findMin(std::vector<int>& nums, int start, int& min, int& temp,int k);
 
+    //2028用 判断一个数是否是整数
+    bool isInteger(double value);
+
 private:
 
     const std::vector<int> dx = { 0, 0, 1, -1 };
@@ -357,4 +360,6 @@ public:
     std::vector<int> findIndices(std::vector<int>& nums, int indexDifference, int valueDifference);//2903. 找出满足差值条件的下标 I
 
     int kthLargestValue(std::vector<std::vector<int>>& matrix, int k);//1738. 找出第 K 大的异或坐标值
+
+    std::vector<int> missingRolls(std::vector<int>& rolls, int mean, int n);//2028. 找出缺失的观测数据
 };

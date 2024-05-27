@@ -545,6 +545,12 @@ void solution1::findMin(std::vector<int>& nums, int start, int& min, int& temp, 
     }
 }
 
+bool solution1::isInteger(double value)
+{
+    double epsilon = std::numeric_limits<float>::epsilon();
+    return value - static_cast<int>(value) < epsilon;
+}
+
 std::vector<int> solution1::avoidFlood(std::vector<int>& rains)
 {
     int temp = findFirstNonZeroIndex(rains);//第一个不为零元素的索引
@@ -3415,6 +3421,30 @@ int solution1::kthLargestValue(std::vector<std::vector<int>>& matrix, int k)
     }
     std::ranges::nth_element(a, a.end() - k);
     return a[a.size() - k];
+}
+
+std::vector<int> solution1::missingRolls(std::vector<int>& rolls, int mean, int n)
+{
+    int mPlusN = rolls.size() + n;
+    int sum = mean * mPlusN;
+    for (auto a : rolls) {
+        sum = sum - a;
+    }
+    if (sum < n || sum > 6 * n) {
+        return {};
+    }
+    double temp = sum / n, extra = sum % n;
+    std::vector<int> result(extra, temp + 1);
+    /*if (isInteger(temp))
+    {
+        result.insert(result.end(),n,temp);
+    }
+    else
+    {
+
+    }*/
+    result.insert(result.end(), n - extra, temp);
+    return result;
 }
 
 
