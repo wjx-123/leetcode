@@ -3447,5 +3447,18 @@ std::vector<int> solution1::missingRolls(std::vector<int>& rolls, int mean, int 
     return result;
 }
 
+std::vector<int> solution1::findPeaks(std::vector<int>& mountain)
+{
+    std::vector<int> result;
+    for (int i = 1; i < mountain.size() - 1; i++)//ȥͷȥβ
+    {
+        if (mountain[i - 1] < mountain[i] && mountain[i] > mountain[i + 1]) 
+        {
+            result.push_back(i);
+        }
+    }
+    return result;
+}
+
 
 
