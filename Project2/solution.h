@@ -362,4 +362,6 @@ public:
     int kthLargestValue(std::vector<std::vector<int>>& matrix, int k);//1738. 找出第 K 大的异或坐标值
 
     std::vector<int> missingRolls(std::vector<int>& rolls, int mean, int n);//2028. 找出缺失的观测数据
+
+    std::vector<int> findPeaks(std::vector<int>& mountain);//2951. 找出峰值
 };
