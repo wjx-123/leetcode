@@ -364,4 +364,6 @@ public:
     std::vector<int> missingRolls(std::vector<int>& rolls, int mean, int n);//2028. 找出缺失的观测数据
 
     std::vector<int> findPeaks(std::vector<int>& mountain);//2951. 找出峰值
+
+    int maximunLength(std::string s);//2982. 找出出现至少三次的最长特殊子字符串 II
 };
