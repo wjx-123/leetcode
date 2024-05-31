@@ -348,7 +348,11 @@ int main(int argc, char* argv[]) {
     so.findWinners(res);*/
 
     //2903
-    std::vector<int> nums = {31,23,36};
-    so.findIndices(nums,1,11);
+    /*std::vector<int> nums = {31,23,36};
+    so.findIndices(nums,1,11);*/
+    
+    //2965
+    std::vector<std::vector<int>> grid = { {1,3},{2,2} };
+    so.findMissingAndRepeatedValues(grid);
     return 0;
 }

@@ -3485,5 +3485,26 @@ int solution1::maximunLength(std::string s)
     return ans ? ans : -1;
 }
 
+std::vector<int> solution1::findMissingAndRepeatedValues(std::vector<std::vector<int>>& grid)
+{
+    int n = grid.size();
+    std::vector<int> cnt(n * n + 1);
+    for (auto& row : grid) {
+        for (int x : row) {
+            cnt[x]++;
+        }
+    }
+    std::vector<int> ans(2);
+    for (int i = 1; i <= n * n; i++) {
+        if (cnt[i] == 2) {
+            ans[0] = i; // 出现两次的数
+        }
+        else if (cnt[i] == 0) {
+            ans[1] = i; // 出现零次的数
+        }
+    }
+    return ans;
+}
+
 
 
