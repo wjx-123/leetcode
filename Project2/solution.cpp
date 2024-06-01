@@ -3506,5 +3506,24 @@ std::vector<int> solution1::findMissingAndRepeatedValues(std::vector<std::vector
     return ans;
 }
 
+int solution1::distributeCandies(int n, int limit)
+{
+    int result = 0;
+    for (int i = 0; i <= n; i++)
+    {
+        for (int j = 0; j <= n - i; j++) 
+        {
+            for (int m = 0; m <= n - i - j; m++)
+            {
+                if (i <= limit && j <= limit && m <= limit && i + j + m == n) 
+                {
+                    result++;
+                }
+            }
+        }
+    }
+    return result;
+}
+
 
 

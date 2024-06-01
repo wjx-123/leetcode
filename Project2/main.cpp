@@ -352,7 +352,10 @@ int main(int argc, char* argv[]) {
     so.findIndices(nums,1,11);*/
     
     //2965
-    std::vector<std::vector<int>> grid = { {1,3},{2,2} };
-    so.findMissingAndRepeatedValues(grid);
+    //std::vector<std::vector<int>> grid = { {1,3},{2,2} };
+    //so.findMissingAndRepeatedValues(grid);
+    
+    //2928
+    so.distributeCandies(5,2);
     return 0;
 }

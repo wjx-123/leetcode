@@ -368,4 +368,6 @@ public:
     int maximunLength(std::string s);//2982. 找出出现至少三次的最长特殊子字符串 II
 
     std::vector<int> findMissingAndRepeatedValues(std::vector<std::vector<int>>& grid);//2965. 找出缺失和重复的数字
+
+    int distributeCandies(int n, int limit);//2928. 给小朋友们分糖果 I
 };
