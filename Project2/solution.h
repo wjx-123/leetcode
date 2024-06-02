@@ -370,4 +370,6 @@ public:
     std::vector<int> findMissingAndRepeatedValues(std::vector<std::vector<int>>& grid);//2965. 找出缺失和重复的数字
 
     int distributeCandies(int n, int limit);//2928. 给小朋友们分糖果 I
+
+    int distributeCandies(std::vector<int>& candyType);//575. 分糖果
 };

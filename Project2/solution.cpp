@@ -3525,5 +3525,16 @@ int solution1::distributeCandies(int n, int limit)
     return result;
 }
 
+int solution1::distributeCandies(std::vector<int>& candyType)
+{
+    std::set<int> temp;
+    for (auto c : candyType)
+    {
+        temp.insert(c);
+    }
+    int n = candyType.size() / 2;
+    return n > temp.size() ? temp.size() : n;
+}
+
 
 
