@@ -3536,5 +3536,26 @@ int solution1::distributeCandies(std::vector<int>& candyType)
     return n > temp.size() ? temp.size() : n;
 }
 
+std::vector<int> solution1::distributeCandiesII(int candies, int num_people)
+{
+    std::vector<int> result(num_people,0);
+    int temp = 0,give = 1;
+    while (candies > 0)
+    {
+        if (give <= candies)
+        {
+            result[temp] += give;
+        }
+        else 
+        {
+            result[temp] += candies;
+        }
+        candies -= give;
+        give++;
+        temp = temp >= num_people - 1 ? 0 : temp + 1;
+    }
+    return result;
+}
+
 
 

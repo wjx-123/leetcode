@@ -372,4 +372,6 @@ public:
     int distributeCandies(int n, int limit);//2928. 给小朋友们分糖果 I
 
     int distributeCandies(std::vector<int>& candyType);//575. 分糖果
+
+    std::vector<int> distributeCandiesII(int candies, int num_people);//1103. 分糖果 II
 };

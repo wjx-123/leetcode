@@ -356,6 +356,10 @@ int main(int argc, char* argv[]) {
     //so.findMissingAndRepeatedValues(grid);
     
     //2928
-    so.distributeCandies(5,2);
+    //so.distributeCandies(5,2);
+
+    //1103
+    so.distributeCandiesII(7,4);
+    
     return 0;
 }

@@ -93,5 +93,7 @@ G:\leetcode\Project2\solution.cpp(3446,44): warning C4244: “参数”: 从“d
 G:\leetcode\Project2\solution.cpp(3446,35): warning C4244: “参数”: 从“double”转换到“const unsigned __int64”，可能丢失数据
 G:\leetcode\Project2\solution.cpp(3466,20): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
 G:\leetcode\Project2\solution.cpp(3490,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(3535,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\leetcode\Project2\solution.cpp(3536,14): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
   正在生成代码...
   Project2.vcxproj -> G:\leetcode\x64\Debug\leetcode.exe
