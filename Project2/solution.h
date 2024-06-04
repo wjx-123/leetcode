@@ -135,6 +135,9 @@ private:
     //2028用 判断一个数是否是整数
     bool isInteger(double value);
 
+    //3067用bfs
+    int dfs_3067(int p,int root,int curr);
+
 private:
 
     const std::vector<int> dx = { 0, 0, 1, -1 };
@@ -150,6 +153,10 @@ private:
     std::vector<int> memo;//70用，记忆功能
 
     std::unordered_map<int, int> vis;//1553用 吃橘子逻辑 -- 动态规划
+
+    std::vector<std::vector<std::pair<int, int>>> graph_3067;//3067用
+
+    int signal;//3067用
 
 public:
     std::vector<int> nextGreaterElement(std::vector<int>& nums1, std::vector<int>& nums2);//496
@@ -374,4 +381,6 @@ public:
     int distributeCandies(std::vector<int>& candyType);//575. 分糖果
 
     std::vector<int> distributeCandiesII(int candies, int num_people);//1103. 分糖果 II
+
+    std::vector<int> countPairsOfConnectableServers(std::vector<std::vector<int>>& edges, int signalSpeed);//3067. 在带权树网络中统计可连接服务器对数目
 };

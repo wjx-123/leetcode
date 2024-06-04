@@ -551,6 +551,23 @@ bool solution1::isInteger(double value)
     return value - static_cast<int>(value) < epsilon;
 }
 
+int solution1::dfs_3067(int p, int root, int curr)
+{
+    int res = 0;
+    if (curr == 0)
+    {
+        res++;
+    }
+    for (auto &[v,cost] : graph_3067[p])
+    {
+        if (v != root)
+        {
+            res += dfs_3067(v, p, (curr + cost) % signal);
+        }
+    }
+    return res;
+}
+
 std::vector<int> solution1::avoidFlood(std::vector<int>& rains)
 {
     int temp = findFirstNonZeroIndex(rains);//第一个不为零元素的索引
@@ -3555,6 +3572,29 @@ std::vector<int> solution1::distributeCandiesII(int candies, int num_people)
         temp = temp >= num_people - 1 ? 0 : temp + 1;
     }
     return result;
+}
+
+std::vector<int> solution1::countPairsOfConnectableServers(std::vector<std::vector<int>>& edges, int signalSpeed)
+{
+    signal = signalSpeed;
+    int n = edges.size() + 1;
+    std::vector<std::vector<std::pair<int, int>>> graph(n);
+    for (int i = 0; i < edges.size(); i++)
+    {
+        graph[edges[i][0]].emplace_back(edges[i][1], edges[i][2]);
+        graph[edges[i][1]].emplace_back(edges[i][0], edges[i][2]);
+    }
+    graph_3067 = graph;
+    std::vector<int> res(n);
+    for (int i = 0; i < n; i++) {
+        int pre = 0;
+        for (auto& [v, cost] : graph[i]) {
+            int cnt = dfs_3067(v, i, cost % signalSpeed);
+            res[i] += pre * cnt;
+            pre += cnt;
+        }
+    }
+    return res;
 }
 
 
