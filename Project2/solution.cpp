@@ -3597,5 +3597,25 @@ std::vector<int> solution1::countPairsOfConnectableServers(std::vector<std::vect
     return res;
 }
 
+long long solution1::minimumSteps(std::string s)
+{
+    long long result = 0;
+    int temp = 0;
+    bool ifG = false;
+    for (long long i = s.length() - 1; i >= 0; i--)
+    {
+        if (s[i] == '0')
+        {
+            temp++;
+            ifG = true;
+        }
+        if (ifG == true && s[i] == '1')
+        {
+            result += temp;
+        }
+    }
+    return result;
+}
+
 
 

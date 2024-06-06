@@ -359,7 +359,9 @@ int main(int argc, char* argv[]) {
     //so.distributeCandies(5,2);
 
     //1103
-    so.distributeCandiesII(7,4);
+    //so.distributeCandiesII(7,4);
     
+    //2938
+    so.minimumSteps("100");
     return 0;
 }
