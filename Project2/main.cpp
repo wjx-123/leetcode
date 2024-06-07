@@ -362,6 +362,10 @@ int main(int argc, char* argv[]) {
     //so.distributeCandiesII(7,4);
     
     //2938
-    so.minimumSteps("100");
+    //so.minimumSteps("100");
+
+    //3038
+    std::vector<int> nums = {3,2,1,4,1};
+    std::cout<< so.maxOperations(nums) <<std::endl;
     return 0;
 }

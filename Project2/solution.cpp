@@ -3617,5 +3617,25 @@ long long solution1::minimumSteps(std::string s)
     return result;
 }
 
+int solution1::maxOperations(std::vector<int>& nums)
+{
+    int result = 1;
+    int sum = nums[0] + nums[1];
+    for (int i = 2,j = 3; i < nums.size() && j < nums.size(); )
+    {
+        if (nums[i] + nums[j] == sum)
+        {
+            i = j + 1;
+            j = i + 1;
+            result++;
+        }
+        else
+        {
+            return result;
+        }
+    }
+    return result;
+}
+
 
 

@@ -385,4 +385,6 @@ public:
     std::vector<int> countPairsOfConnectableServers(std::vector<std::vector<int>>& edges, int signalSpeed);//3067. 在带权树网络中统计可连接服务器对数目
 
     long long minimumSteps(std::string s);//2938. 区分黑球与白球
+
+    int maxOperations(std::vector<int>& nums);//3038. 相同分数的最大操作数目 I
 };
