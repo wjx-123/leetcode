@@ -365,7 +365,11 @@ int main(int argc, char* argv[]) {
     //so.minimumSteps("100");
 
     //3038
-    std::vector<int> nums = {3,2,1,4,1};
-    std::cout<< so.maxOperations(nums) <<std::endl;
+   /* std::vector<int> nums = {3,2,1,4,1};
+    std::cout<< so.maxOperations(nums) <<std::endl;*/
+
+    //312
+    std::vector<int> nums = { 3,1,5,8 };
+    std::cout << so.maxCoins(nums) << std::endl;
     return 0;
 }

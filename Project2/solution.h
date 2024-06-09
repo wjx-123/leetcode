@@ -138,6 +138,9 @@ private:
     //3067用bfs
     int dfs_3067(int p,int root,int curr);
 
+    //312用 找到当前数组的最小值所在位置
+    int findMinOfVector(std::vector<int>& nums);
+
 private:
 
     const std::vector<int> dx = { 0, 0, 1, -1 };
@@ -387,4 +390,6 @@ public:
     long long minimumSteps(std::string s);//2938. 区分黑球与白球
 
     int maxOperations(std::vector<int>& nums);//3038. 相同分数的最大操作数目 I
+
+    int maxCoins(std::vector<int>& nums);//312. 戳气球
 };

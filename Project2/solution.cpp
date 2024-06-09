@@ -568,6 +568,20 @@ int solution1::dfs_3067(int p, int root, int curr)
     return res;
 }
 
+int solution1::findMinOfVector(std::vector<int>& nums)
+{
+    int result = -1, temp = 100;
+    for (int i = 0; i < nums.size(); i++)
+    {
+        if (nums[i] < temp) 
+        {
+            temp = nums[i];
+            result = i;
+        }
+    }
+    return result;
+}
+
 std::vector<int> solution1::avoidFlood(std::vector<int>& rains)
 {
     int temp = findFirstNonZeroIndex(rains);//第一个不为零元素的索引
@@ -3634,6 +3648,27 @@ int solution1::maxOperations(std::vector<int>& nums)
             return result;
         }
     }
+    return result;
+}
+
+int solution1::maxCoins(std::vector<int>& nums)
+{
+    int result = 0;
+    while (nums.size() > 0)
+    {
+        if (nums.size() >= 4 || nums.size() < 3)
+        {
+            int temp = findMinOfVector(nums);
+            result += nums[temp] * (temp > 0 ? nums[temp - 1] : 1) * (temp < nums.size() - 1 ? nums[temp + 1] : 1);
+            nums.erase(nums.begin() + temp);
+        }
+        else
+        {
+            result += nums[0] * nums[1] * nums[2];
+            nums.erase(nums.begin() + 1);
+        }
+    }
+    
     return result;
 }
 
