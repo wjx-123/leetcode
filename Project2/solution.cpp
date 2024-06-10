@@ -3672,5 +3672,49 @@ int solution1::maxCoins(std::vector<int>& nums)
     return result;
 }
 
+int solution1::numRescueBoats(std::vector<int>& people, int limit)
+{
+    std::sort(people.begin(),people.end());
+    int result = 0;
+    int i = people.size() - 1;
+    for (i; i > 0; i--)
+    {
+        if (people[i] < limit)
+        {
+            break;
+        }
+    }
+    if (i != people.size() - 1)
+    {
+        result += people.size() - 1 - i; 
+        people.erase(people.begin() + i + 1, people.end());
+    }
+    int left = 0, right = people.size() - 1;
+    while (!people.empty())
+    {
+        if(people[left] + people[right] > limit && left != right)
+        {
+            people.erase(people.begin() + right);//right指向的元素只能自己一个船
+            result++;
+            right--;
+            continue;
+        }
+        if (people[left] + people[right] <= limit && left != right)
+        {
+            people.erase(people.begin() + right);
+            people.erase(people.begin() + left);
+            right -= 2;
+            result++;
+            continue;
+        }
+        if (left == right)
+        {
+            result++;
+            return result;
+        }
+    }
+    return result;
+}
+
 
 

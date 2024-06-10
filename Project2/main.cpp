@@ -369,7 +369,11 @@ int main(int argc, char* argv[]) {
     std::cout<< so.maxOperations(nums) <<std::endl;*/
 
     //312
-    std::vector<int> nums = { 3,1,5,8 };
-    std::cout << so.maxCoins(nums) << std::endl;
+    /*std::vector<int> nums = { 3,1,5,8 };
+    std::cout << so.maxCoins(nums) << std::endl;*/
+
+    //881
+    std::vector<int> people = {2,4};
+    so.numRescueBoats(people,5);
     return 0;
 }

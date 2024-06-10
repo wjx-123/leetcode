@@ -392,4 +392,6 @@ public:
     int maxOperations(std::vector<int>& nums);//3038. 相同分数的最大操作数目 I
 
     int maxCoins(std::vector<int>& nums);//312. 戳气球
+
+    int numRescueBoats(std::vector<int>& people, int limit);//881. 救生艇
 };
