@@ -3716,5 +3716,21 @@ int solution1::numRescueBoats(std::vector<int>& people, int limit)
     return result;
 }
 
+int solution1::countBattleships(std::vector<std::vector<char>>& board)
+{
+    int result = 0;
+    for (int i = 0; i < board.size(); i++)
+    {
+        for (int j = 0; j < board[0].size(); j++) 
+        {
+            if (board[i][j] == 'X' && (i == 0 || board[i - 1][j] != 'X') && (j == 0 || board[i][j - 1] != 'X'))
+            {
+                result++;
+            }
+        }
+    }
+    return result;
+}
+
 
 

@@ -394,4 +394,6 @@ public:
     int maxCoins(std::vector<int>& nums);//312. 戳气球
 
     int numRescueBoats(std::vector<int>& people, int limit);//881. 救生艇
+
+    int countBattleships(std::vector<std::vector<char>>& board); //419. 甲板上的战舰
 };
