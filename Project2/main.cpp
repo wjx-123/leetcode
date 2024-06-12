@@ -373,7 +373,10 @@ int main(int argc, char* argv[]) {
     std::cout << so.maxCoins(nums) << std::endl;*/
 
     //881
-    std::vector<int> people = {2,4};
-    so.numRescueBoats(people,5);
+    //std::vector<int> people = {2,4};
+    //so.numRescueBoats(people,5);
+
+    //2806
+    so.accountBalanceAfterPurchase(10);
     return 0;
 }

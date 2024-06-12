@@ -396,4 +396,6 @@ public:
     int numRescueBoats(std::vector<int>& people, int limit);//881. 救生艇
 
     int countBattleships(std::vector<std::vector<char>>& board); //419. 甲板上的战舰
+
+    int accountBalanceAfterPurchase(int purchaseAmount);//2806. 取整购买后的账户余额
 };

@@ -3732,5 +3732,33 @@ int solution1::countBattleships(std::vector<std::vector<char>>& board)
     return result;
 }
 
+int solution1::accountBalanceAfterPurchase(int purchaseAmount)
+{
+   /* int res = 0;
+    std::string temp = std::to_string(purchaseAmount);
+    std::string a;
+    a.append(1, temp[temp.size() - 1]);
+    int i = std::stoi(a);
+    if (i < 5)
+    {
+        res = (temp.size() - 1) * 10;
+    }
+    else
+    {
+        res = temp.size() * 10;
+    }
+    return 100 - res;*/
+    int i = purchaseAmount % 10;
+    if (i < 5)
+    {
+        purchaseAmount -= i;
+    }
+    else
+    {
+        purchaseAmount += 10 - i;
+    }
+    return 100 - purchaseAmount;
+}
+
 
 
