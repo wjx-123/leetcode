@@ -377,6 +377,10 @@ int main(int argc, char* argv[]) {
     //so.numRescueBoats(people,5);
 
     //2806
-    so.accountBalanceAfterPurchase(10);
+    //so.accountBalanceAfterPurchase(10);
+    
+    //2288
+    so.discountPrices("there are $1 $2 and 5$ candies in the shop",50);
+
     return 0;
 }

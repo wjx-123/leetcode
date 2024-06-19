@@ -15,6 +15,7 @@
 #include <climits>
 #include <functional>
 #include <numeric>
+#include<iomanip>
 
 struct TreeNode {
     int val;
@@ -398,4 +399,6 @@ public:
     int countBattleships(std::vector<std::vector<char>>& board); //419. 甲板上的战舰
 
     int accountBalanceAfterPurchase(int purchaseAmount);//2806. 取整购买后的账户余额
+
+    std::string discountPrices(std::string sentence, int discount);//2288. 价格减免
 };

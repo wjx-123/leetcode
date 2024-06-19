@@ -3760,5 +3760,30 @@ int solution1::accountBalanceAfterPurchase(int purchaseAmount)
     return 100 - purchaseAmount;
 }
 
+std::string solution1::discountPrices(std::string sentence, int discount)
+{
+    double d = 1 - discount / 100.0;
+    std::stringstream ss(sentence);
+    std::string ans, w;
+    while (ss >> w)
+    {
+        if(!ans.empty())
+        {
+            ans += ' ';
+        }
+        if (w.length() > 1 && w[0] == '$' && std::all_of(w.begin() + 1, w.end(), ::isdigit)) 
+        {
+            std::stringstream s;
+            s << std::fixed << std::setprecision(2) << "&" << std::stoll(w.substr(1)) * d;
+            ans += s.str();
+        }
+        else
+        {
+            ans += w;
+        }
+    }
+    return ans;
+}
+
 
 
