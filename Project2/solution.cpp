@@ -3785,5 +3785,24 @@ std::string solution1::discountPrices(std::string sentence, int discount)
     return ans;
 }
 
+std::vector<int> solution1::nextGreaterElements(std::vector<int>& nums)
+{
+    int length = nums.size();
+    std::vector<int> res(length,-1);
+    nums.insert(nums.end(),nums.begin(),nums.end());
+    for (int i = 0; i < length; i++)
+    {
+        for (int j = i; j < nums.size(); j++)
+        {
+            if (nums[j] > nums[i]) 
+            {
+                res[i] = nums[j];
+                break;
+            }
+        }
+    }
+    return res;
+}
+
 
 

@@ -380,7 +380,10 @@ int main(int argc, char* argv[]) {
     //so.accountBalanceAfterPurchase(10);
     
     //2288
-    so.discountPrices("there are $1 $2 and 5$ candies in the shop",50);
+    //so.discountPrices("there are $1 $2 and 5$ candies in the shop",50);
 
+    //503
+    std::vector<int> nums = { 1,2,1 };
+    so.nextGreaterElements(nums);
     return 0;
 }
