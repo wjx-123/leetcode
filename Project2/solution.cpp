@@ -3804,5 +3804,33 @@ std::vector<int> solution1::nextGreaterElements(std::vector<int>& nums)
     return res;
 }
 
+int solution1::pivotIndex(std::vector<int>& nums)
+{
+    std::vector<int> leftSum(nums.size(),0), rightSum(nums.size(),0);
+    int temp = 0;
+    for (int i = 0; i < nums.size(); i++)
+    {
+        leftSum[i] = temp;
+        temp += nums[i];
+    }
+    temp = 0;
+    for (int i = nums.size() - 1; i >= 0; i--)
+    {
+        rightSum[i] = temp;
+        temp += nums[i];
+    }
+    int result = -1;
+    for (int i = 0; i < nums.size(); i++)
+    {
+        if (leftSum[i] == rightSum[i])
+        {
+            result = i;
+            return result;
+        }
+    }
+    return result;
+}
+
+
 
 

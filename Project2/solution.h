@@ -403,4 +403,6 @@ public:
     std::string discountPrices(std::string sentence, int discount);//2288. 价格减免
 
     std::vector<int> nextGreaterElements(std::vector<int>& nums);//503. 下一个更大元素 II
+
+    int pivotIndex(std::vector<int> & nums);//724. 寻找数组的中心下标
 };

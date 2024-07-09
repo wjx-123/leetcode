@@ -383,7 +383,11 @@ int main(int argc, char* argv[]) {
     //so.discountPrices("there are $1 $2 and 5$ candies in the shop",50);
 
     //503
-    std::vector<int> nums = { 1,2,1 };
-    so.nextGreaterElements(nums);
+    //std::vector<int> nums = { 1,2,1 };
+    //so.nextGreaterElements(nums);
+
+    //724
+    std::vector<int> nums = { -1,-1,0,0,-1,-1 };
+    so.pivotIndex(nums);
     return 0;
 }
