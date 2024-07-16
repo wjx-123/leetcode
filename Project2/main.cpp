@@ -387,7 +387,11 @@ int main(int argc, char* argv[]) {
     //so.nextGreaterElements(nums);
 
     //724
-    std::vector<int> nums = { -1,-1,0,0,-1,-1 };
-    so.pivotIndex(nums);
+    //std::vector<int> nums = { -1,-1,0,0,-1,-1 };
+    //so.pivotIndex(nums);
+
+    //3011  
+    std::vector<int> nums = { 8,4,2,30,15 };
+    std::cout << so.canSortArray(nums) << std::endl;;
     return 0;
 }

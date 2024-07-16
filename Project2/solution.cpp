@@ -582,6 +582,22 @@ int solution1::findMinOfVector(std::vector<int>& nums)
     return result;
 }
 
+int solution1::lengthOfBinary(int n)
+{
+    std::string binary = "";
+    int res = 0;
+    if (n == 0)
+    {
+        return 0;
+    }
+    while (n > 0)
+    {
+        binary += (n % 2 == 0 ? "0" : "1", res++);
+        n = n / 2;
+    }
+    return res;
+}
+
 std::vector<int> solution1::avoidFlood(std::vector<int>& rains)
 {
     int temp = findFirstNonZeroIndex(rains);//第一个不为零元素的索引
@@ -3829,6 +3845,56 @@ int solution1::pivotIndex(std::vector<int>& nums)
         }
     }
     return result;
+}
+
+bool solution1::canSortArray(std::vector<int>& nums)
+{
+    //int i = lengthOfBinary(15);  得到某个十进制数转成二进制后1的数量
+    int i = 0, j = 1;
+    for ( ; i < nums.size() && j < nums.size() ; )
+    {
+        if (lengthOfBinary(nums[i]) == lengthOfBinary(nums[j])) 
+        {
+            if (nums[i] > nums[j])
+            {
+                int temp = nums[j];
+                nums[j] = nums[i];
+                nums[i] = temp;
+            }
+        }
+        i++, j++;
+    }
+    i = 0, j = 1;
+    for (; i < nums.size() && j < nums.size();)
+    {
+        if (nums[i] > nums[j]) 
+        {
+            return false;
+        }
+        i++, j++;
+    }
+    return true;
+}
+
+std::vector<int> solution1::findIntersectionValues(std::vector<int>& nums1, std::vector<int>& nums2)
+{
+    std::vector<int> res(2);
+    std::unordered_set<int> set_nums1(nums1.begin(), nums1.end()), set_nums2(nums2.begin(), nums2.end());
+    for (auto i : nums1)
+    {
+        if (set_nums1.count(i))
+        {
+            res[0]++;
+        }
+    }
+    for (auto i : nums2)
+    {
+        if (set_nums2.count(i)) 
+        {
+            res[1]++;
+        }
+    }
+    return res;
 }
 
 

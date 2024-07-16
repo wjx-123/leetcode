@@ -142,6 +142,9 @@ private:
     //312用 找到当前数组的最小值所在位置
     int findMinOfVector(std::vector<int>& nums);
 
+    //3011用 十进制转成二进制并统计1的数量
+    int lengthOfBinary(int n);
+
 private:
 
     const std::vector<int> dx = { 0, 0, 1, -1 };
@@ -405,4 +408,8 @@ public:
     std::vector<int> nextGreaterElements(std::vector<int>& nums);//503. 下一个更大元素 II
 
     int pivotIndex(std::vector<int> & nums);//724. 寻找数组的中心下标
+
+    bool canSortArray(std::vector<int>& nums);//3011. 判断一个数组是否可以变为有序
+
+    std::vector<int> findIntersectionValues(std::vector<int>& nums1, std::vector<int>& nums2);//2956. 找到两个数组中的公共元素
 };
