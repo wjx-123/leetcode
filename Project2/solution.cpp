@@ -3897,6 +3897,28 @@ std::vector<int> solution1::findIntersectionValues(std::vector<int>& nums1, std:
     return res;
 }
 
+int solution1::maxIncreaseKeepingSkyline(std::vector<std::vector<int>>& grid)
+{
+    int result = 0;
+    std::vector<int> max_Row(grid.size()), max_col(grid[0].size());
+    for (int i = 0; i < grid.size(); i++) 
+    {
+        for (int j = 0; j < grid[0].size(); j++)
+        {
+            max_Row[i] = std::max(max_Row[i],grid[i][j]);
+            max_col[j] = std::max(max_col[j],grid[i][j]);
+        }
+    }
+    for (int i = 0; i < grid.size(); i++)
+    {
+        for (int j = 0; j < grid[0].size(); j++)
+        {
+            result += std::min(max_Row[i],max_col[j]) - grid[i][j];
+        }
+    }
+    return result;
+}
+
 
 
 

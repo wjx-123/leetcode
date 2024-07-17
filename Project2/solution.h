@@ -412,4 +412,6 @@ public:
     bool canSortArray(std::vector<int>& nums);//3011. 判断一个数组是否可以变为有序
 
     std::vector<int> findIntersectionValues(std::vector<int>& nums1, std::vector<int>& nums2);//2956. 找到两个数组中的公共元素
+
+    int maxIncreaseKeepingSkyline(std::vector<std::vector<int>>& grid);//保持城市天际线
 };
