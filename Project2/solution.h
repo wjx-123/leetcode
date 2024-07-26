@@ -416,4 +416,6 @@ public:
     int maxIncreaseKeepingSkyline(std::vector<std::vector<int>>& grid);//保持城市天际线
 
     int minimumLevels(std::vector<int>& possible);//3096. 得到更多分数的最少关卡数目
+
+    int findValueOfPartition(std::vector<int>& nums);//2740. 找出分区值
 };

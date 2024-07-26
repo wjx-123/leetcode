@@ -3962,6 +3962,17 @@ int solution1::minimumLevels(std::vector<int>& possible)
     return result;
 }
 
+int solution1::findValueOfPartition(std::vector<int>& nums)
+{
+    std::sort(nums.begin(), nums.end());
+    int result = INT_MAX;
+    for (int i = 1; i < nums.size(); i++)
+    {
+        result = std::min(result, nums[i] - nums[i - 1]);
+    }
+    return result;
+}
+
 
 
 
