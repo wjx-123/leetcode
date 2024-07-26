@@ -3919,6 +3919,50 @@ int solution1::maxIncreaseKeepingSkyline(std::vector<std::vector<int>>& grid)
     return result;
 }
 
+int solution1::minimumLevels(std::vector<int>& possible)
+{
+    std::vector<int> leftSum(possible.size(), 0), rightSum(possible.size(), 0);
+    int temp = 0;
+    for (int i = 0; i < possible.size(); i++)
+    {
+        if (possible[i] == 1)
+        {
+            temp++;
+            leftSum[i] = temp;
+        }
+        else 
+        {
+            temp--;
+            leftSum[i] = temp;
+        }
+    }
+    temp = 0;
+    for (int i = possible.size() - 1; i >= 0; i--)
+    {
+        if (possible[i] == 1)
+        {
+            temp++;
+            rightSum[i] = temp;
+        }
+        else
+        {
+            temp--;
+            rightSum[i] = temp;
+        }
+    }
+    int result = -1;
+    for (int i = 0; i < possible.size() - 1; i++)
+    {
+        if (leftSum[i] > rightSum[i + 1]) 
+        {
+            result = i;
+            return result;
+        }
+    }
+    return result;
+}
+
+
 
 
 

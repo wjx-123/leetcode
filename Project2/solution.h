@@ -414,4 +414,6 @@ public:
     std::vector<int> findIntersectionValues(std::vector<int>& nums1, std::vector<int>& nums2);//2956. 找到两个数组中的公共元素
 
     int maxIncreaseKeepingSkyline(std::vector<std::vector<int>>& grid);//保持城市天际线
+
+    int minimumLevels(std::vector<int>& possible);//3096. 得到更多分数的最少关卡数目
 };

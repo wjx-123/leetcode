@@ -391,7 +391,11 @@ int main(int argc, char* argv[]) {
     //so.pivotIndex(nums);
 
     //3011  
-    std::vector<int> nums = { 8,4,2,30,15 };
-    std::cout << so.canSortArray(nums) << std::endl;;
+   /* std::vector<int> nums = { 8,4,2,30,15 };
+    std::cout << so.canSortArray(nums) << std::endl;*/
+
+    //3096
+    std::vector<int> possible = { 1,0,1,0 };
+    so.minimumLevels(possible);
     return 0;
 }
