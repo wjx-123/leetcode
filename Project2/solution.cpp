@@ -3973,6 +3973,25 @@ int solution1::findValueOfPartition(std::vector<int>& nums)
     return result;
 }
 
+int solution1::getImportance(std::vector<Employee*> employees, int id)
+{
+    std::unordered_map<int, Employee*> mp;
+    std::stack<int> temp;//用栈存一下，每次取一个
+    temp.push(id);
+    int sumOfImportance = 0;
+    for (int i = 0; i < employees.size(); i++)
+    {
+        //mp[employees[i]->id] = employees[i];
+        //int id = employees[i]->id;
+        mp[employees[i]->id] = employees[i];
+    }
+    while (!temp.empty())
+    {
+
+    }
+    return 0;
+}
+
 
 
 

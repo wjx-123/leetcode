@@ -40,6 +40,16 @@ public:
         : val(_val), left(_left), right(_right), next(_next) {}
 };
 
+class Employee 
+{
+public:
+    int id;
+    int importance;
+    std::vector<int> subordinates;
+    Employee();
+    ~Employee();
+};//690员工的重要性用
+
 class solution1 {
 public:
     solution1();
@@ -418,4 +428,6 @@ public:
     int minimumLevels(std::vector<int>& possible);//3096. 得到更多分数的最少关卡数目
 
     int findValueOfPartition(std::vector<int>& nums);//2740. 找出分区值
+
+    int getImportance(std::vector<Employee *> employees,int id);//690. 员工的重要性
 };
