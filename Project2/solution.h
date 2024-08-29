@@ -430,4 +430,6 @@ public:
     int findValueOfPartition(std::vector<int>& nums);//2740. 找出分区值
 
     int getImportance(std::vector<Employee *> employees,int id);//690. 员工的重要性
+
+    bool satisfiesConditions(std::vector<std::vector<int>>& grid);//3142. 判断矩阵是否满足条件
 };

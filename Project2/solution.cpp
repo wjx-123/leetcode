@@ -3981,15 +3981,45 @@ int solution1::getImportance(std::vector<Employee*> employees, int id)
     int sumOfImportance = 0;
     for (int i = 0; i < employees.size(); i++)
     {
-        //mp[employees[i]->id] = employees[i];
-        //int id = employees[i]->id;
         mp[employees[i]->id] = employees[i];
     }
     while (!temp.empty())
     {
-
+        //int pos = mp.find(temp.top());
+        int nowId = temp.top();
+        sumOfImportance += mp[nowId]->importance;
+        temp.pop();
+        for (int i = 0; i < mp[nowId]->subordinates.size(); i++)
+        {
+            temp.push(mp[nowId]->subordinates[i]);
+        }
     }
-    return 0;
+    return sumOfImportance;
+}
+
+bool solution1::satisfiesConditions(std::vector<std::vector<int>>& grid)
+{
+    for (int i = 0; i < grid.size(); i++)
+    {
+        for (int j = 0; j < grid[0].size(); j++) 
+        {
+            if (i + 1 < grid.size())//下边有格子
+            {
+                if (grid[i][j] != grid[i + 1][j]) 
+                {
+                    return false;
+                }
+            }
+            if (j + 1 < grid[0].size())
+            {
+                if (grid[i][j] == grid[i][j + 1]) 
+                {
+                    return false;
+                }
+            }
+        }
+    }
+    return true;
 }
 
 

@@ -395,7 +395,11 @@ int main(int argc, char* argv[]) {
     std::cout << so.canSortArray(nums) << std::endl;*/
 
     //3096
-    std::vector<int> possible = { 1,0,1,0 };
-    so.minimumLevels(possible);
+    //std::vector<int> possible = { 1,0,1,0 };
+    //so.minimumLevels(possible);
+
+    //3142
+    std::vector<std::vector<int>> temp = { {1,0,2},{1,0,2} };
+    std::cout << so.satisfiesConditions(temp) << std::endl;
     return 0;
 }
