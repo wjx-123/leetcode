@@ -399,7 +399,18 @@ int main(int argc, char* argv[]) {
     //so.minimumLevels(possible);
 
     //3142
-    std::vector<std::vector<int>> temp = { {1,0,2},{1,0,2} };
-    std::cout << so.satisfiesConditions(temp) << std::endl;
+    //std::vector<std::vector<int>> temp = { {1,0,2},{1,0,2} };
+    //std::cout << so.satisfiesConditions(temp) << std::endl;
+
+    //2332
+    //std::vector<int> bus = { 3 };
+    //std::vector<int> passengers = { 2,3 };
+    //so.latestTimeCatchTheBus(bus,passengers,2);
+
+    /*std::string s = "jofyzub";
+    std::cout<< so.longestContinuousSubstring(s) << std::endl;*/
+
+    std::vector<std::vector<int>> nums = { {3,6},{1,5},{4,7} };
+    std::cout << so.numberOfPoints(nums) << std::endl;
     return 0;
 }

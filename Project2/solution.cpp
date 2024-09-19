@@ -4022,6 +4022,111 @@ bool solution1::satisfiesConditions(std::vector<std::vector<int>>& grid)
     return true;
 }
 
+int solution1::latestTimeCatchTheBus(std::vector<int>& buses, std::vector<int>& passengers, int capacity)
+{
+    //int result = 0;
+    //std::sort(buses.begin(),buses.end());
+    //std::sort(passengers.begin(), passengers.end());
+    //std::map<int, std::vector<int>> temp;
+    //std::vector<int> a;
+    //int i = 0, j = 0;
+    //int tech = 0;
+    //while (i < buses.size() && j < passengers.size())
+    //{
+    //    if (tech < capacity && passengers[j] <= buses[i])
+    //    {
+    //        a.push_back(passengers[j]);
+    //        j++;
+    //        tech++;
+    //    }
+    //    else
+    //    {
+    //        temp.insert({buses[i],a});
+    //        i++;
+    //        tech = 0;
+    //        a.clear();
+    //    }
+    //}
+
+    //for (auto& bus : temp)
+    //{
+    //    int startTime = bus.first;
+    //    std::vector<int>& passengerArrivalTimes = bus.second;
+    //    for (int m = startTime; m >= 0; m--)
+    //    {
+    //        if (m > passengerArrivalTimes[passengerArrivalTimes.size() - 1] && passengerArrivalTimes.size() == capacity)
+    //        {
+    //            m = passengerArrivalTimes[passengerArrivalTimes.size() - 1];
+    //        }
+    //        if (std::find(passengerArrivalTimes.begin(), passengerArrivalTimes.end(), m) == passengerArrivalTimes.end()) 
+    //        {
+    //            //若没有冲突，更新最晚到达时间
+    //            result = std::max(m, result);
+    //            break;
+    //        }
+    //    }
+    //}
+    //return result;
+
+    int result = 0;
+    std::sort(buses.begin(),buses.end());
+    std::sort(passengers.begin(), passengers.end());
+    int pos = 0, space = 0;
+    for (int arrive : buses)
+    {
+        space = capacity;
+        while (space > 0 && pos < passengers.size() && passengers[pos] <= arrive)
+        {
+            space--;
+            pos++;
+        }
+    }
+    pos--;
+    result = space > 0 ? buses.back() : passengers[pos];
+    while (pos >= 0 && passengers[pos] == result)
+    {
+        pos--; result--;
+    }
+    return result;
+}
+
+int solution1::longestContinuousSubstring(std::string s)
+{
+    int result = 1;
+    int temp = 1;
+    int i = 0, j = 1;
+    for ( i,j; i < s.length() && j < s.length(); )
+    {
+        if (s[j] - s[j - 1] == 1) 
+        {
+            temp++;
+            j++;
+        }
+        else
+        {
+            i++;
+            j = i + 1;
+            result = std::max(result,temp);
+            temp = 1;
+        }
+    }
+    result = std::max(result, temp);
+    return result;
+}
+
+int solution1::numberOfPoints(std::vector<std::vector<int>>& nums)
+{
+    std::set<int> temp;
+    for (auto i : nums)
+    {
+        for (int j = i[0]; j <= i.back(); j++)
+        {
+            temp.insert(j);
+        }
+    }
+    return temp.size();
+}
+
 
 
 

@@ -432,4 +432,10 @@ public:
     int getImportance(std::vector<Employee *> employees,int id);//690. 员工的重要性
 
     bool satisfiesConditions(std::vector<std::vector<int>>& grid);//3142. 判断矩阵是否满足条件
+
+    int latestTimeCatchTheBus(std::vector<int>& buses, std::vector<int>& passengers, int capacity);//2332. 坐上公交的最晚时间
+
+    int longestContinuousSubstring(std::string s);//2414. 最长的字母序连续子字符串的长度
+
+    int numberOfPoints(std::vector<std::vector<int>>& nums);//2848. 与车相交的点
 };
