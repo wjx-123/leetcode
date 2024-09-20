@@ -410,7 +410,9 @@ int main(int argc, char* argv[]) {
     /*std::string s = "jofyzub";
     std::cout<< so.longestContinuousSubstring(s) << std::endl;*/
 
-    std::vector<std::vector<int>> nums = { {3,6},{1,5},{4,7} };
-    std::cout << so.numberOfPoints(nums) << std::endl;
+ /*   std::vector<std::vector<int>> nums = { {3,6},{1,5},{4,7} };
+    std::cout << so.numberOfPoints(nums) << std::endl;*/
+
+    std::cout << so.countSpecialNumbers(20) << std::endl;
     return 0;
 }

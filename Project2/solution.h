@@ -155,6 +155,9 @@ private:
     //3011用 十进制转成二进制并统计1的数量
     int lengthOfBinary(int n);
 
+    //2376用 判断一个数是否为特殊整数，即每一个位置的数都互不相同
+    bool ifNumIsSpecial(std::string);
+
 private:
 
     const std::vector<int> dx = { 0, 0, 1, -1 };
@@ -438,4 +441,6 @@ public:
     int longestContinuousSubstring(std::string s);//2414. 最长的字母序连续子字符串的长度
 
     int numberOfPoints(std::vector<std::vector<int>>& nums);//2848. 与车相交的点
+
+    int countSpecialNumbers(int n);//2376. 统计特殊整数
 };

@@ -598,6 +598,20 @@ int solution1::lengthOfBinary(int n)
     return res;
 }
 
+bool solution1::ifNumIsSpecial(std::string n)
+{
+    std::set<char> num;
+    for (int i = 0; i < n.size(); i++)
+    {
+        if (num.find(i) != num.end())
+        {
+            return false;
+        }
+        num.insert(n[i]);
+    }
+    return n.size() == num.size();
+}
+
 std::vector<int> solution1::avoidFlood(std::vector<int>& rains)
 {
     int temp = findFirstNonZeroIndex(rains);//第一个不为零元素的索引
@@ -4125,6 +4139,20 @@ int solution1::numberOfPoints(std::vector<std::vector<int>>& nums)
         }
     }
     return temp.size();
+}
+
+int solution1::countSpecialNumbers(int n)
+{
+    int result = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        std::string a = std::to_string(i);
+        if (ifNumIsSpecial(a) == true) 
+        {
+            result++;
+        }
+    }
+    return result;
 }
 
 
