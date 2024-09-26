@@ -443,4 +443,7 @@ public:
     int numberOfPoints(std::vector<std::vector<int>>& nums);//2848. 与车相交的点
 
     int countSpecialNumbers(int n);//2376. 统计特殊整数
+
+    int differenceOfSum(std::vector<int>& nums);//2535. 数组元素和与数字和的绝对差
+
 };

@@ -4155,6 +4155,24 @@ int solution1::countSpecialNumbers(int n)
     return result;
 }
 
+int solution1::differenceOfSum(std::vector<int>& nums)
+{
+    int result = 0;
+    for (auto i : nums)
+    {
+        int sum_y = 0;
+        int sum_s = 0;
+        sum_y = i;
+        std::string temp = std::to_string(i);
+        for (int y = 0; y < temp.size(); y++)
+        {
+            sum_s += static_cast<int>(temp[y]) - '0';
+        }
+        result += sum_y - sum_s;
+    }
+    return abs(result);
+}
+
 
 
 
