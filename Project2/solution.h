@@ -446,4 +446,7 @@ public:
 
     int differenceOfSum(std::vector<int>& nums);//2535. 数组元素和与数字和的绝对差
 
+    std::vector<std::vector<std::string>> groupAnagrams(std::vector<std::string>& strs);//49. 字母异位词分组
+
+    int longestConsecutive(std::vector<int>& nums);//128. 最长连续序列
 };

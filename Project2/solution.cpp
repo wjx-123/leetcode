@@ -4173,6 +4173,44 @@ int solution1::differenceOfSum(std::vector<int>& nums)
     return abs(result);
 }
 
+std::vector<std::vector<std::string>> solution1::groupAnagrams(std::vector<std::string>& strs)
+{
+    std::unordered_map<std::string, std::vector<std::string>> hashMap;
+    for (int i = 0; i < strs.size(); i++)
+    {
+        std::string temp = strs[i];
+        std::sort(temp.begin(),temp.end());
+        hashMap[temp].push_back(strs[i]);
+    }
+    std::vector<std::vector<std::string>> result;
+    for (auto i : hashMap)
+    {
+        result.push_back(i.second);
+        //result.insert(result.end(),i.second.begin(),i.second.end());
+    }
+    return result;
+}
+
+int solution1::longestConsecutive(std::vector<int>& nums)
+{
+    if (nums.size() == 0) return 0;
+    std::set<int> st;
+    for (auto& x : nums) st.insert(x);
+
+    auto it = st.begin();
+    int ret = 1, x = *it;
+    int ans = 1;
+
+    for (++it; it != st.end(); it++)
+    {
+        if (*it == x + 1) ans++;
+        else ans = 1;
+        x = *it;
+        ret = std::max(ret, ans);
+    }
+    return ret;
+}
+
 
 
 

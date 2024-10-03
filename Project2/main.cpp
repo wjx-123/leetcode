@@ -416,7 +416,12 @@ int main(int argc, char* argv[]) {
     //std::cout << so.countSpecialNumbers(20) << std::endl;
 
     //2535
-    std::vector<int> a = { 1,15,6,3 };
-    so.differenceOfSum(a);
+    //std::vector<int> a = { 1,15,6,3 };
+    //so.differenceOfSum(a);
+
+    //49 groupAnagrams
+    std::vector<std::string> strs = { "eat", "tea", "tan", "ate", "nat", "bat" };
+    so.groupAnagrams(strs);
+    
     return 0;
 }
